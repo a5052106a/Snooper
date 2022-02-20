@@ -21,7 +21,7 @@ document.getElementsByClassName('grid-item')[0]
 document.getElementsByClassName('grid-item')[1]
     .addEventListener('click', function(event) {
         // do something
-        alert("hello");
+        //alert("hello");
         document.getElementById("content").style.zIndex = "5";
         document.getElementById("grid").style.opacity = "0.5";
         // document.getElementById("test").style.opacity = "0.5";
@@ -32,19 +32,19 @@ document.getElementsByClassName('grid-item')[1]
 
 document.getElementsByClassName('window_header_close')[0]
     .addEventListener('click', function(event) {
-        alert("close");
+        //alert("close");
         document.getElementById("content").style.zIndex = "-1";
         document.getElementById("grid").style.opacity = "1";
     });
 document.getElementsByClassName('window_header_close')[1]
     .addEventListener('click', function(event) {
-        alert("close");
+        //alert("close");
         document.getElementById("content").style.zIndex = "-1";
         document.getElementById("grid").style.opacity = "1";
     });
 document.getElementsByClassName('window_header_close')[2]
     .addEventListener('click', function(event) {
-        alert("close");
+        //alert("close");
         document.getElementById("content").style.zIndex = "-1";
         document.getElementById("grid").style.opacity = "1";
     });
