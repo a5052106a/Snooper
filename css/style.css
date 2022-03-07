@@ -52,7 +52,7 @@ main {
 }
 
 .grid-item {
-    border: 2px solid rgb(57, 57, 57);
+    border: 2px solid rgb(255, 255, 255);
     text-align: center;
     transition: all 200ms ease;
 }
@@ -128,7 +128,7 @@ main {
 }
 
 .testclass_img_div {
-    border: 2px solid rgb(57, 57, 57);
+    border: 2px solid rgb(255, 255, 255);
     text-align: center;
     transition: all 200ms ease;
 }
@@ -136,7 +136,7 @@ main {
 .testclass_img_div img {
     width: 100%;
     height: 100%;
-    border: 2px solid rgb(57, 57, 57);
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .content_area {
@@ -390,7 +390,7 @@ p {
         padding: 20px 0px;
     }
     .window {
-        background-color: gray;
+        background-color: rgb(255, 255, 255);
         display: flex;
         border: 1px solid #fff;
         position: absolute;
