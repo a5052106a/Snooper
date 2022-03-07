@@ -24,26 +24,26 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const storage = getStorage();
 
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_94.png')).then((url) => {
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_10.png')).then((url) => {
+    document.getElementsByClassName("grid-item")[7].getElementsByTagName("img")[0].src = url
+})
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_11.png')).then((url) => {
+    document.getElementsByClassName("grid-item")[8].getElementsByTagName("img")[0].src = url
+})
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_12.png')).then((url) => {
+    document.getElementsByClassName("grid-item")[9].getElementsByTagName("img")[0].src = url
+})
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_13.png')).then((url) => {
+    document.getElementsByClassName("grid-item")[10].getElementsByTagName("img")[0].src = url
+})
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_14.png')).then((url) => {
+    document.getElementsByClassName("grid-item")[11].getElementsByTagName("img")[0].src = url
+})
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_15.png')).then((url) => {
     document.getElementsByClassName("grid-item")[12].getElementsByTagName("img")[0].src = url
 })
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_95.png')).then((url) => {
+getDownloadURL(ref(storage, '/WebCam01/07 March 2022_Webcam01_16.png')).then((url) => {
     document.getElementsByClassName("grid-item")[13].getElementsByTagName("img")[0].src = url
-})
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_96.png')).then((url) => {
-    document.getElementsByClassName("grid-item")[14].getElementsByTagName("img")[0].src = url
-})
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_97.png')).then((url) => {
-    document.getElementsByClassName("grid-item")[15].getElementsByTagName("img")[0].src = url
-})
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_98.png')).then((url) => {
-    document.getElementsByClassName("grid-item")[16].getElementsByTagName("img")[0].src = url
-})
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_100.png')).then((url) => {
-    document.getElementsByClassName("grid-item")[17].getElementsByTagName("img")[0].src = url
-})
-getDownloadURL(ref(storage, '/WebCam01/05 March 2022_Webcam01_101.png')).then((url) => {
-    document.getElementsByClassName("grid-item")[18].getElementsByTagName("img")[0].src = url
 })
 
 
@@ -87,11 +87,11 @@ function change() {
 }
 
 //黃色貓貓
-var Img29 = document.getElementsByClassName("grid-item")[8].getElementsByTagName("img")[0];
-Img29.src = "https://firebasestorage.googleapis.com/v0/b/snooper-ab1f9.appspot.com/o/z.jpg?alt=media&token=1bb43514-20ba-4a9e-bcaa-fcaa7a9586d7"
+// var Img29 = document.getElementsByClassName("grid-item")[8].getElementsByTagName("img")[0];
+// Img29.src = "https://firebasestorage.googleapis.com/v0/b/snooper-ab1f9.appspot.com/o/z.jpg?alt=media&token=1bb43514-20ba-4a9e-bcaa-fcaa7a9586d7"
 
 //loading
-setTimeout(timer1, 1000);
+setTimeout(timer1, 3000);
 
 function timer1() {
     document.getElementById("loading-bg").style.opacity = "0";
