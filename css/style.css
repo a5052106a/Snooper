@@ -97,7 +97,7 @@ main {
     background-color: black;
     width: 100%;
     height: auto;
-    top: 10%;
+    top: 20%;
     left: 0;
     z-index: 1;
     opacity: 0;
@@ -107,7 +107,7 @@ main {
     width: 80%;
     background-color: black;
     margin: 10px auto;
-    padding: 10px 24px;
+    padding: 10px 0px;
 }
 
 .carousel_btn_left {
@@ -304,6 +304,7 @@ p {
     color: white;
     line-height: 1.64em;
     letter-spacing: 0.08em;
+    text-align: center;
 }
 
 .content_video {
@@ -563,6 +564,17 @@ p {
         transform: rotate(55deg);
         border-radius: 20px;
     }
+    .content_carousel {
+        display: flexbox;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        height: auto;
+        top: 15%;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+    }
 }
 
 @media (min-width: 960px) {
@@ -767,6 +779,23 @@ p {
         width: 50px;
         transform: rotate(55deg);
         border-radius: 20px;
+    }
+    .content_carousel {
+        display: flexbox;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        height: auto;
+        top: 10%;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+    .content_carousel_main {
+        width: 80%;
+        background-color: black;
+        margin: 10px auto;
+        padding: 10px 24px;
     }
 }
 
