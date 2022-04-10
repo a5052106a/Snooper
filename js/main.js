@@ -35,16 +35,19 @@ function writeUserData(userId, imageUrl) {
         profile_picture: imageUrl
     });
 }
+
+// ------ 輪播圖1 ---------
+
 //firebase json抓取
 const dbRef = ref1(getDatabase());
 const db = getDatabase();
-const target = "target";
+const target = "test01";
 var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catchimg = 60;
-get(child(dbRef, `WebCam01/${target}`)).then((snapshot) => {
+var catchimg = 5;
+get(child(dbRef, `WebCam06/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
         if (snapshot.val() != null) {
@@ -56,14 +59,14 @@ get(child(dbRef, `WebCam01/${target}`)).then((snapshot) => {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
             for (var i = 0; i < imgarray.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam01/' + imgarray[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam06/' + imgarray[i])).then((url) => {
                     //console.log(url)
                     temp.push(url)
                     imgcount++
                 })
             }
         }
-        //console.log(imgarray[4])
+        console.log(imgarray[4])
     } else {
         console.log("No data available");
     }
@@ -76,7 +79,7 @@ function change() {
     if (imgcount != catchimg) {
 
     } else {
-        //console.log(temp)
+        // console.log(temp)
         for (i = 0; i < catchimg; i++) {
             //URL temp 進行10次
             for (var j = 0; j < catchimg; j++) {
@@ -84,7 +87,7 @@ function change() {
                 var te = temp[i] //url : https://asdasdasdasd%20Webcam
                 var tw = imgarray[j].replace(/ /g, "%20")
                     //Webcam 02 ->Webcam%2002
-                console.log(tw)
+                    // console.log(tw)
                 if (te.includes(tw)) {
                     imgurl[j] = temp[i]
                 }
@@ -102,7 +105,157 @@ function change() {
 }
 
 
+// ------ 輪播圖2 ---------
 
+const target2 = "test02";
+var imgarray2 = new Array()
+var imgurl2 = [];
+var imgcount2 = 0
+var temp2 = []
+var catchimg2 = 5;
+get(child(dbRef, `WebCam07/${target2}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        // console.log(snapshot.val())
+        if (snapshot.val() != null) {
+            var dataarray2 = snapshot.val();
+            // console.log(dataarray2);
+            // console.log(dataarray2.length - 1)
+            // console.log(dataarray2.length - 10)
+            for (var i = dataarray2.length - 1; i >= dataarray2.length - catchimg2; i--) {
+                imgarray2[dataarray2.length - i - 1] = dataarray2[i]
+            }
+            for (var i = 0; i < imgarray2.length; i++) {
+                getDownloadURL(ref(storage, '/WebCam07/' + imgarray2[i])).then((url) => {
+                    // console.log(url)
+                    temp2.push(url)
+                    imgcount2++
+                    // console.log(imgcount2)
+                })
+            }
+        }
+        // console.log(imgarray2[4])
+        // console.log(temp2)
+    } else {
+        console.log("No data available");
+    }
+}).catch((error) => {
+    console.error(error);
+});
+var timetest2 = setInterval(change2, 1000);
+
+function change2() {
+    if (imgcount2 != catchimg2) {
+        // console.log(imgcount2)
+        // console.log(catchimg2)
+        // console.log(temp2)
+    } else {
+        // console.log(temp2)
+        for (i = 0; i < catchimg2; i++) {
+            //URL temp 進行10次
+            for (var j = 0; j < catchimg2; j++) {
+                // url 對imgarray進行全體掃秒
+                var te2 = temp2[i] //url : https://asdasdasdasd%20Webcam
+                var tw2 = imgarray2[j].replace(/ /g, "%20")
+                    //Webcam 02 ->Webcam%2002
+                    // console.log(tw2)
+                if (te2.includes(tw2)) {
+                    imgurl2[j] = temp2[i]
+                }
+            }
+        }
+        clearInterval(timetest2)
+            // console.log(imgarray2[0])
+            // console.log(imgurl2[0])
+
+        // for (var i = 0; i < catchimg2; i++) {
+        //     console.log(imgurl[i])
+        //     var carousel_img = document.getElementsByClassName("user_photo2")[i].getElementsByTagName("img")[0];
+        //     carousel_img.src = imgurl2[i]
+        //     clearInterval(timetest)
+        // }
+    }
+    //document.getElementsByClassName('grid-item')[0]
+
+}
+
+
+// ------ 輪播圖3 ---------
+
+const target3 = "test02";
+var imgarray3 = new Array()
+var imgurl3 = [];
+var imgcount3 = 0
+var temp3 = []
+var catchimg3 = 5;
+get(child(dbRef, `WebCam07/${target3}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        // console.log(snapshot.val())
+        if (snapshot.val() != null) {
+            var dataarray3 = snapshot.val();
+            // console.log(dataarray2);
+            // console.log(dataarray2.length - 1)
+            // console.log(dataarray2.length - 10)
+            for (var i = dataarray3.length - 1; i >= dataarray3.length - catchimg3; i--) {
+                imgarray3[dataarray3.length - i - 1] = dataarray3[i]
+            }
+            for (var i = 0; i < imgarray3.length; i++) {
+                getDownloadURL(ref(storage, '/WebCam07/' + imgarray3[i])).then((url) => {
+                    // console.log(url)
+                    temp3.push(url)
+                    imgcount3++
+                    // console.log(imgcount2)
+                })
+            }
+        }
+        // console.log(imgarray2[4])
+        // console.log(temp2)
+    } else {
+        console.log("No data available");
+    }
+}).catch((error) => {
+    console.error(error);
+});
+var timetest3 = setInterval(change3, 1000);
+
+function change3() {
+    if (imgcount3 != catchimg3) {
+        // console.log(imgcount2)
+        // console.log(catchimg2)
+        // console.log(temp2)
+    } else {
+        // console.log(temp2)
+        for (i = 0; i < catchimg3; i++) {
+            //URL temp 進行10次
+            for (var j = 0; j < catchimg3; j++) {
+                // url 對imgarray進行全體掃秒
+                var te3 = temp3[i] //url : https://asdasdasdasd%20Webcam
+                var tw3 = imgarray3[j].replace(/ /g, "%20")
+                    //Webcam 02 ->Webcam%2002
+                    // console.log(tw2)
+                if (te3.includes(tw3)) {
+                    imgurl3[j] = temp3[i]
+                }
+            }
+        }
+        clearInterval(timetest3)
+            // console.log(imgarray2[0])
+            // console.log(imgurl2[0])
+
+        // for (var i = 0; i < catchimg2; i++) {
+        //     console.log(imgurl[i])
+        //     var carousel_img = document.getElementsByClassName("user_photo2")[i].getElementsByTagName("img")[0];
+        //     carousel_img.src = imgurl2[i]
+        //     clearInterval(timetest)
+        // }
+    }
+    //document.getElementsByClassName('grid-item')[0]
+}
+
+
+
+
+
+//------ 單張照片抓取 -------
 {
     // const database = getDatabase(app);
 
@@ -373,34 +526,49 @@ for (var i = 0; i < test1.length; i++) {
         //alert(this.dataset.user)
         document.getElementById("content").style.zIndex = "5";
         document.getElementById("grid").style.opacity = "0";
-        // setTimeout(function() {
-        //     document.getElementById("photo_window").style.opacity = "1";
-        // }, 300);
-        // setTimeout(function() {
-        //     document.getElementById("qa_window").style.opacity = "1";
-        // }, 100);
-        // setTimeout(function() {
-        //     document.getElementById("video_window").style.opacity = "1";
-        // }, 500);
+
+        // console.log(imgurl2[1])
+        var userNum = this.dataset.user
+        console.log(imgurl2[userNum])
+        var user_photo2 = document.getElementsByClassName("user_photo2")[0].getElementsByTagName("img")[0]
+        console.log(user_photo2)
+        user_photo2.src = imgurl2[userNum]
+        var user_photo3 = document.getElementsByClassName("user_photo3")[0].getElementsByTagName("img")[0]
+        user_photo3.src = imgurl3[userNum]
+            //
+            // setTimeout(function() {
+            //     document.getElementById("photo_window").style.opacity = "1";
+            // }, 300);
+            // setTimeout(function() {
+            //     document.getElementById("qa_window").style.opacity = "1";
+            // }, 100);
+            // setTimeout(function() {
+            //     document.getElementById("video_window").style.opacity = "1";
+            // }, 500);
+
         setTimeout(function() {
             document.getElementById("carousel_window").style.opacity = "1";
         }, 100);
         var classbackimg = this.getElementsByTagName('img')[0].src
+            // var num = this.getElementsByClassName("grid-item")[0].dataset.user
             //alert(classbackimg)
-            //console.log(classbackimg)
+            // console.log(classbackimg)
         var classvideo = this.dataset.video;
         var classcontent = this.dataset.content;
         var user_photo = document.getElementsByClassName("user_photo")[0].getElementsByTagName("img")[0]
             //console.log(test1[i]["data-user"])
         user_photo.src = classbackimg
         if (i >= 0 && i < test1.length) {
-            console.log(test1[i].dataset.user)
+            // console.log(test1.length)
+            // console.log(test1[i].dataset.user)
         }
 
         var classarray = document.getElementsByClassName("testclass_img");
         for (i in classarray) {
             classarray[i].src = classbackimg
         }
+
+
     });
 
 }
@@ -436,49 +604,77 @@ document.getElementsByClassName('grid-item')[1]
 */
 
 //------- page2 : close_button on click
-
 document.getElementsByClassName('window_header_close')[0]
     .addEventListener('click', function(event) {
-        // alert("close");
         document.getElementById("content").style.zIndex = "-1";
         document.getElementById("grid").style.opacity = "1";
-        document.getElementById("photo_window").style.opacity = "0";
-        document.getElementById("qa_window").style.opacity = "0";
-        document.getElementById("video_window").style.opacity = "0";
         var showback = document.getElementsByClassName("testclass")[0];
         showback.style = "display:grid;background:none;"
         document.getElementsByClassName("testclass_img").src = "";
+
+        //關閉按鈕之後設定輪流撥放器初始為第一張圖片
+        //先取得輪播器內的carousel-item數量
+        var hatest = document.getElementsByClassName("carousel-item").length;
+        //hatest.className+=" active";
+        //根據上面取到的數量進行for迴圈處理
+        for (var check = 0; check < hatest; check++) {
+            //設置變數haatest為每一個carousel-item
+            var haatest = document.getElementsByClassName("carousel-item")[check];
+            //判斷每一個carousel-item中是否含有atvive以及目前是否是第一張圖片正在被active
+            if ((haatest.className.includes("active")) && (check != 0)) {
+                //設定str變數為原本的classname
+                var str = haatest.className;
+                //利用replace把原本str中的active設為空白
+                var str1 = str.replace("active", " ")
+                    //再將原本的className更換為替換後的className讓他不要為active
+                haatest.className = str1
+                    //再將第一張的classname以同樣的方式替換className
+                str = document.getElementsByClassName("carousel-item")[0];
+                str1 = str.className + " active";
+                str.className = str1;
+            }
+        }
+        //console.log(hatest);
     });
-document.getElementsByClassName('window_header_close')[1]
-    .addEventListener('click', function(event) {
-        // alert("close");
-        document.getElementById("content").style.zIndex = "-1";
-        document.getElementById("grid").style.opacity = "1";
-        document.getElementById("photo_window").style.opacity = "0";
-        document.getElementById("qa_window").style.opacity = "0";
-        document.getElementById("video_window").style.opacity = "0";
-        var showback = document.getElementsByClassName("testclass")[0];
-        showback.style = "display:grid;background:none;"
-    });
-document.getElementsByClassName('window_header_close')[2]
-    .addEventListener('click', function(event) {
-        // alert("close");
-        document.getElementById("content").style.zIndex = "-1";
-        document.getElementById("grid").style.opacity = "1";
-        document.getElementById("photo_window").style.opacity = "0";
-        document.getElementById("qa_window").style.opacity = "0";
-        document.getElementById("video_window").style.opacity = "0";
-    });
-document.getElementsByClassName('window_header_close')[3]
-    .addEventListener('click', function(event) {
-        // alert("close");
-        document.getElementById("content").style.zIndex = "-1";
-        document.getElementById("grid").style.opacity = "1";
-        document.getElementById("photo_window").style.opacity = "0";
-        document.getElementById("qa_window").style.opacity = "0";
-        document.getElementById("video_window").style.opacity = "0";
-        document.getElementsByClassName("testclass_img").src = "";
-    });
+// document.getElementsByClassName('window_header_close')[0]
+//     .addEventListener('click', function(event) {
+//         document.getElementById("content").style.zIndex = "-1";
+//         document.getElementById("grid").style.opacity = "1";
+// document.getElementById("photo_window").style.opacity = "0";
+// document.getElementById("qa_window").style.opacity = "0";
+// document.getElementById("video_window").style.opacity = "0";
+//     var showback = document.getElementsByClassName("testclass")[0];
+//     showback.style = "display:grid;background:none;"
+//     document.getElementsByClassName("testclass_img").src = "";
+// });
+// document.getElementsByClassName('window_header_close')[1]
+//     .addEventListener('click', function(event) {
+//         document.getElementById("content").style.zIndex = "-1";
+//         document.getElementById("grid").style.opacity = "1";
+//         document.getElementById("photo_window").style.opacity = "0";
+//         document.getElementById("qa_window").style.opacity = "0";
+//         document.getElementById("video_window").style.opacity = "0";
+//         var showback = document.getElementsByClassName("testclass")[0];
+//         showback.style = "display:grid;background:none;"
+//     });
+// document.getElementsByClassName('window_header_close')[2]
+//     .addEventListener('click', function(event) {
+//         document.getElementById("content").style.zIndex = "-1";
+//         document.getElementById("grid").style.opacity = "1";
+//         document.getElementById("photo_window").style.opacity = "0";
+//         document.getElementById("qa_window").style.opacity = "0";
+//         document.getElementById("video_window").style.opacity = "0";
+//     });
+// document.getElementsByClassName('window_header_close')[3]
+//     .addEventListener('click', function(event) {
+//         console.log("close")
+//         document.getElementById("content").style.zIndex = "-1";
+//         document.getElementById("grid").style.opacity = "1";
+//         document.getElementById("photo_window").style.opacity = "0";
+//         document.getElementById("qa_window").style.opacity = "0";
+//         document.getElementById("video_window").style.opacity = "0";
+//         document.getElementsByClassName("testclass_img").src = "";
+//     });
 
 //---------css----------//
 var btn = document.getElementsByClassName("carousel-control-next");
@@ -491,21 +687,27 @@ for (i = 0; i < btn.length; i++) {
         arrow.style.scale = "";
     };
 }
+var myCarousel = document.querySelector('#myCarousel')
+var carousel = new bootstrap.Carousel(myCarousel, {
+        // interval: 2000,
+        // wrap: false,
+        // cycle: false
+        pause: true
+    })
+    // test function
 
-// test function
-
-function test() {
-    var element = document.getElementById("test");
-    element.style.opacity = "0.5";
-    alert(userNum); //get grid-item 的 data-user"01"
-    // document.getElementsByClassName('grid-item');
-}
+// function test() {
+//     var element = document.getElementById("test");
+//     element.style.opacity = "0.5";
+// alert(userNum); //get grid-item 的 data-user"01"
+// document.getElementsByClassName('grid-item');
+//}
 
 
 //data-* det setting
 
-var userNum = document.getElementsByClassName('grid-item')[0].dataset.user
-console.log(userNum);
+// var userNum = document.getElementsByClassName('grid-item')[0].dataset.user
+// console.log(userNum);
 
 
 
