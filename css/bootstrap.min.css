@@ -139,7 +139,7 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
     background-color: transparent
 }
@@ -6546,7 +6546,7 @@ a.close.disabled {
 .carousel-fade .active.carousel-item-right {
     z-index: 0;
     opacity: 0;
-    transition: 0s .6s opacity
+    transition: 0s .01s opacity
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -6561,7 +6561,7 @@ a.close.disabled {
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 2;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -6571,7 +6571,7 @@ a.close.disabled {
     width: 15%;
     text-align: center;
     opacity: 0;
-    transition: opacity .15s ease
+    transition: opacity .1s ease
 }
 
 @media (prefers-reduced-motion:reduce) {

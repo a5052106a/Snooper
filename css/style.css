@@ -121,6 +121,7 @@ main {
     transition: 0.2s;
     top: 45%;
     left: 0%;
+    z-index: 2;
 }
 
 .carousel_btn_right {
@@ -135,6 +136,7 @@ main {
     top: 45%;
     left: 90.5%;
     margin: 0%;
+    z-index: 2;
 }
 
 @keyframes color2 {
@@ -619,13 +621,14 @@ p {
     .window_header {
         background-color: black;
         width: 100%;
-        height: 28px;
+        height: 5vmin;
         border-bottom: 1px solid #fff;
         display: flex;
         transition: 0.2s 0.8s;
     }
     .window_header_roll {
         width: 100%;
+        margin: auto 0px;
     }
     .window_header_close {
         flex-direction: column-reverse;
@@ -820,4 +823,12 @@ p {
 #downloadedImg {
     width: 200px;
     height: auto;
+}
+
+#btn {
+    padding: 5px 15px;
+    background-color: aqua;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
 }
