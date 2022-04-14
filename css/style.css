@@ -104,7 +104,7 @@ main {
 }
 
 .content_carousel_main {
-    width: 80%;
+    width: 80vmin;
     background-color: black;
     margin: 10px auto;
     padding: 10px 0px;
@@ -232,6 +232,12 @@ main {
 }
 
 .window_header_roll {
+    width: 100%;
+}
+
+.window_header_gif {
+    /* height: 100%; */
+    /* width: auto; */
     width: 100%;
 }
 
@@ -795,7 +801,7 @@ p {
         opacity: 0;
     }
     .content_carousel_main {
-        width: 80%;
+        width: 80vmin;
         background-color: black;
         margin: 10px auto;
         padding: 10px 24px;
