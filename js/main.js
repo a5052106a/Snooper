@@ -46,7 +46,7 @@ var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catchimg = 10;
+var catchimg = 20;
 get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
