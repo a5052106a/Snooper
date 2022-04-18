@@ -41,13 +41,13 @@ function writeUserData(userId, imageUrl) {
 //firebase json抓取
 const dbRef = ref1(getDatabase());
 const db = getDatabase();
-const target = "test01";
+const target = "target";
 var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catchimg = 5;
-get(child(dbRef, `WebCam06/${target}`)).then((snapshot) => {
+var catchimg = 8;
+get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
         if (snapshot.val() != null) {
@@ -59,7 +59,7 @@ get(child(dbRef, `WebCam06/${target}`)).then((snapshot) => {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
             for (var i = 0; i < imgarray.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam06/' + imgarray[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam02/' + imgarray[i])).then((url) => {
                     //console.log(url)
                     temp.push(url)
                     imgcount++
@@ -107,13 +107,13 @@ function change() {
 
 // ------ 輪播圖2 ---------
 
-const target2 = "test02";
+const target2 = "target";
 var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catchimg2 = 5;
-get(child(dbRef, `WebCam07/${target2}`)).then((snapshot) => {
+var catchimg2 = 12;
+get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
         if (snapshot.val() != null) {
@@ -125,7 +125,7 @@ get(child(dbRef, `WebCam07/${target2}`)).then((snapshot) => {
                 imgarray2[dataarray2.length - i - 1] = dataarray2[i]
             }
             for (var i = 0; i < imgarray2.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam07/' + imgarray2[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam01/' + imgarray2[i])).then((url) => {
                     // console.log(url)
                     temp2.push(url)
                     imgcount2++
@@ -181,13 +181,13 @@ function change2() {
 
 // ------ 輪播圖3 ---------
 
-const target3 = "test02";
+const target3 = "target";
 var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catchimg3 = 5;
-get(child(dbRef, `WebCam07/${target3}`)).then((snapshot) => {
+var catchimg3 = 12;
+get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
         if (snapshot.val() != null) {
@@ -199,7 +199,7 @@ get(child(dbRef, `WebCam07/${target3}`)).then((snapshot) => {
                 imgarray3[dataarray3.length - i - 1] = dataarray3[i]
             }
             for (var i = 0; i < imgarray3.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam07/' + imgarray3[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam01/' + imgarray3[i])).then((url) => {
                     // console.log(url)
                     temp3.push(url)
                     imgcount3++
@@ -251,7 +251,23 @@ function change3() {
     //document.getElementsByClassName('grid-item')[0]
 }
 
-
+const data_name = "name";
+var namearray = new Array()
+var namecount = 0
+var nametemp = []
+var namecatching = 5;
+get(child(dbRef, `QA/${data_name}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var dataarrayname = snapshot.val();
+            console.log(dataarrayname);
+            for (var i = dataarrayname.length - 1; i >= dataarrayname.length - namecatching; i--) {
+                namearray[dataarrayname.length - i - 1] = dataarrayname[i]
+            }
+            console.log(dataarrayname);
+        }
+    }
+})
 
 
 
