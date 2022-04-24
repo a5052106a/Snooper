@@ -210,7 +210,7 @@ main {
 .testclass_img_div img {
     width: 100%;
     height: 100%;
-    border: 2px solid rgb(53, 73, 250);
+    border: 1px solid rgb(53, 73, 250);
     /* filter: sepia(50%) */
     /* filter: drop-shadow(16px 16px 20px rgb(0, 0, 0)) invert(75%); */
 }
@@ -800,7 +800,7 @@ p {
     .prev_arrow1 {
         position: relative;
         background: rgb(255, 255, 255);
-        top: 94%;
+        top: 92%;
         left: 6%;
         height: .5vmin;
         width: 6vmin;
@@ -810,7 +810,7 @@ p {
     .prev_arrow2 {
         position: relative;
         background: rgb(255, 255, 255);
-        top: 6%;
+        top: 8%;
         left: 6%;
         height: .5vmin;
         width: 6vmin;
@@ -820,7 +820,7 @@ p {
     .next_arrow1 {
         position: relative;
         background: rgb(255, 255, 255);
-        top: 94%;
+        top: 93%;
         left: 20%;
         height: .5vmin;
         width: 50px;
@@ -830,7 +830,7 @@ p {
     .next_arrow2 {
         position: relative;
         background: rgb(255, 255, 255);
-        top: 6%;
+        top: 7%;
         left: 20%;
         height: .5vmin;
         width: 50px;
