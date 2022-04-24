@@ -46,7 +46,7 @@ var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catchimg = 20;
+var catching = 30;
 get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
@@ -55,18 +55,19 @@ get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
             //console.log(dataarray);
             //console.log(dataarray.length-1)
             //console.log(dataarray.length-10)
-            for (var i = dataarray.length - 1; i >= dataarray.length - catchimg; i--) {
+            for (var i = dataarray.length - 1; i >= dataarray.length - catching; i--) {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
             for (var i = 0; i < imgarray.length; i++) {
                 getDownloadURL(ref(storage, '/WebCam02/' + imgarray[i])).then((url) => {
-                    //console.log(url)
+                    // console.log(url)
                     temp.push(url)
+                        // console.log(temp)
                     imgcount++
                 })
             }
         }
-        console.log(imgarray[4])
+        // console.log(imgarray[4])
     } else {
         console.log("No data available");
     }
@@ -76,13 +77,13 @@ get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
 var timetest = setInterval(change, 1000);
 
 function change() {
-    if (imgcount != catchimg) {
+    if (imgcount != catching) {
 
     } else {
         // console.log(temp)
-        for (i = 0; i < catchimg; i++) {
+        for (i = 0; i < catching; i++) {
             //URL temp 進行10次
-            for (var j = 0; j < catchimg; j++) {
+            for (var j = 0; j < catching; j++) {
                 // url 對imgarray進行全體掃秒
                 var te = temp[i] //url : https://asdasdasdasd%20Webcam
                 var tw = imgarray[j].replace(/ /g, "%20")
@@ -94,7 +95,7 @@ function change() {
             }
         }
         //console.log(imgurl)
-        for (var i = 0; i < catchimg; i++) {
+        for (var i = 0; i < catching; i++) {
             //console.log(imgurl[i])
             var test_img = document.getElementsByClassName("grid-item")[i].getElementsByTagName("img")[0];
             test_img.src = imgurl[i]
@@ -112,7 +113,7 @@ var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catchimg2 = 12;
+var catching2 = 30;
 get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -121,7 +122,7 @@ get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
             // console.log(dataarray2);
             // console.log(dataarray2.length - 1)
             // console.log(dataarray2.length - 10)
-            for (var i = dataarray2.length - 1; i >= dataarray2.length - catchimg2; i--) {
+            for (var i = dataarray2.length - 1; i >= dataarray2.length - catching2; i--) {
                 imgarray2[dataarray2.length - i - 1] = dataarray2[i]
             }
             for (var i = 0; i < imgarray2.length; i++) {
@@ -144,15 +145,15 @@ get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
 var timetest2 = setInterval(change2, 1000);
 
 function change2() {
-    if (imgcount2 != catchimg2) {
+    if (imgcount2 != catching2) {
         // console.log(imgcount2)
-        // console.log(catchimg2)
+        // console.log(catching2)
         // console.log(temp2)
     } else {
         // console.log(temp2)
-        for (i = 0; i < catchimg2; i++) {
+        for (i = 0; i < catching2; i++) {
             //URL temp 進行10次
-            for (var j = 0; j < catchimg2; j++) {
+            for (var j = 0; j < catching2; j++) {
                 // url 對imgarray進行全體掃秒
                 var te2 = temp2[i] //url : https://asdasdasdasd%20Webcam
                 var tw2 = imgarray2[j].replace(/ /g, "%20")
@@ -167,7 +168,7 @@ function change2() {
             // console.log(imgarray2[0])
             // console.log(imgurl2[0])
 
-        // for (var i = 0; i < catchimg2; i++) {
+        // for (var i = 0; i < catching2; i++) {
         //     console.log(imgurl[i])
         //     var carousel_img = document.getElementsByClassName("user_photo2")[i].getElementsByTagName("img")[0];
         //     carousel_img.src = imgurl2[i]
@@ -186,7 +187,7 @@ var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catchimg3 = 12;
+var catching3 = 30;
 get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -195,7 +196,7 @@ get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
             // console.log(dataarray2);
             // console.log(dataarray2.length - 1)
             // console.log(dataarray2.length - 10)
-            for (var i = dataarray3.length - 1; i >= dataarray3.length - catchimg3; i--) {
+            for (var i = dataarray3.length - 1; i >= dataarray3.length - catching3; i--) {
                 imgarray3[dataarray3.length - i - 1] = dataarray3[i]
             }
             for (var i = 0; i < imgarray3.length; i++) {
@@ -218,15 +219,15 @@ get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
 var timetest3 = setInterval(change3, 1000);
 
 function change3() {
-    if (imgcount3 != catchimg3) {
+    if (imgcount3 != catching3) {
         // console.log(imgcount2)
-        // console.log(catchimg2)
+        // console.log(catching2)
         // console.log(temp2)
     } else {
         // console.log(temp2)
-        for (i = 0; i < catchimg3; i++) {
+        for (i = 0; i < catching3; i++) {
             //URL temp 進行10次
-            for (var j = 0; j < catchimg3; j++) {
+            for (var j = 0; j < catching3; j++) {
                 // url 對imgarray進行全體掃秒
                 var te3 = temp3[i] //url : https://asdasdasdasd%20Webcam
                 var tw3 = imgarray3[j].replace(/ /g, "%20")
@@ -241,7 +242,7 @@ function change3() {
             // console.log(imgarray2[0])
             // console.log(imgurl2[0])
 
-        // for (var i = 0; i < catchimg2; i++) {
+        // for (var i = 0; i < catching2; i++) {
         //     console.log(imgurl[i])
         //     var carousel_img = document.getElementsByClassName("user_photo2")[i].getElementsByTagName("img")[0];
         //     carousel_img.src = imgurl2[i]
@@ -250,21 +251,112 @@ function change3() {
     }
     //document.getElementsByClassName('grid-item')[0]
 }
-
+//----------- QA DATA NAME-----------
 const data_name = "name";
 var namearray = new Array()
-var namecount = 0
-var nametemp = []
 var namecatching = 5;
 get(child(dbRef, `QA/${data_name}`)).then((snapshot) => {
     if (snapshot.exists()) {
         if (snapshot.val() != null) {
             var dataarrayname = snapshot.val();
-            console.log(dataarrayname);
+            // console.log(dataarrayname);
             for (var i = dataarrayname.length - 1; i >= dataarrayname.length - namecatching; i--) {
-                namearray[dataarrayname.length - i - 1] = dataarrayname[i]
+                if (dataarrayname[i] == 'x') {
+                    namearray[dataarrayname.length - i - 1] = '拒絕回答！'
+                } else {
+                    namearray[dataarrayname.length - i - 1] = dataarrayname[i]
+                }
+
             }
-            console.log(dataarrayname);
+            // console.log(namearray)
+            // console.log(namearray[0])
+        }
+    }
+})
+
+//----------- QA DATA NUMBER-----------
+const data_num = "phone_number";
+var numarray = new Array()
+var numcatching = 5;
+get(child(dbRef, `QA/${data_num}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var dataarraynum = snapshot.val();
+            // console.log(dataarraynum);
+            for (var i = dataarraynum.length - 1; i >= dataarraynum.length - numcatching; i--) {
+                if (dataarraynum[i] == 'x') {
+                    numarray[dataarraynum.length - i - 1] = '拒絕回答！'
+                } else {
+                    numarray[dataarraynum.length - i - 1] = dataarraynum[i]
+                }
+
+            }
+            // console.log(numarray)
+            // console.log(numarray[0])
+        }
+    }
+})
+
+//----------- QA DATA ADD-----------
+const data_add = "address";
+var addarray = new Array()
+var addcatching = 5;
+get(child(dbRef, `QA/${data_add}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var dataarrayadd = snapshot.val();
+            // console.log(dataarrayadd);
+            for (var i = dataarrayadd.length - 1; i >= dataarrayadd.length - addcatching; i--) {
+                // console.log(dataarrayadd[i])
+                if (dataarrayadd[i] == 'x') {
+                    addarray[dataarrayadd.length - i - 1] = '拒絕回答！'
+                } else {
+                    addarray[dataarrayadd.length - i - 1] = dataarrayadd[i]
+                }
+            }
+
+        }
+    }
+})
+
+//----------- QA DATA HOBBY-----------
+const data_hob = "hobby";
+var hobarray = new Array()
+var hobcatching = 5;
+get(child(dbRef, `QA/${data_hob}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var dataarrayhob = snapshot.val();
+            // console.log(dataarrayhob);
+            for (var i = dataarrayhob.length - 1; i >= dataarrayhob.length - hobcatching; i--) {
+                if (dataarrayhob[i] == 'x') {
+                    hobarray[dataarrayhob.length - i - 1] = '拒絕回答！'
+                } else {
+                    hobarray[dataarrayhob.length - i - 1] = dataarrayhob[i]
+                }
+            }
+            // console.log(hobarray)
+            // console.log(hobarray[0])
+        }
+    }
+})
+
+//----------- QA DATA ANGLE-----------
+const data_ang = "angle";
+var angarray = new Array()
+var angcatching = 5;
+get(child(dbRef, `QA/${data_ang}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var dataarrayang = snapshot.val();
+            // console.log(dataarrayang);
+            for (var i = dataarrayang.length - 1; i >= dataarrayang.length - angcatching; i--) {
+                if (dataarrayang[i] == 'x') {
+                    angarray[dataarrayang.length - i - 1] = '拒絕回答！'
+                } else {
+                    angarray[dataarrayang.length - i - 1] = dataarrayang[i]
+                }
+            }
         }
     }
 })
@@ -551,16 +643,31 @@ for (var i = 0; i < test1.length; i++) {
         user_photo2.src = imgurl2[userNum]
         var user_photo3 = document.getElementsByClassName("user_photo3")[0].getElementsByTagName("img")[0]
         user_photo3.src = imgurl3[userNum]
-            //
-            // setTimeout(function() {
-            //     document.getElementById("photo_window").style.opacity = "1";
-            // }, 300);
-            // setTimeout(function() {
-            //     document.getElementById("qa_window").style.opacity = "1";
-            // }, 100);
-            // setTimeout(function() {
-            //     document.getElementById("video_window").style.opacity = "1";
-            // }, 500);
+        var user_QA_name = document.getElementById("qa_name")
+        user_QA_name.innerText = "姓名：" + namearray[userNum]
+        var user_QA_number = document.getElementById("qa_number")
+        user_QA_number.innerText = "聯絡電話：" + numarray[userNum]
+        var user_QA_address = document.getElementById("qa_add")
+        user_QA_address.innerText = "地址：" + addarray[userNum]
+        var user_QA_hobby = document.getElementById("qa_hobby")
+        user_QA_hobby.innerText = "興趣：" + hobarray[userNum]
+        var user_QA_angle = document.getElementById("qa_angle")
+        if (angarray[userNum] == '拒絕回答！') {
+            user_QA_angle.innerText = "最喜歡的拍照角度：" + angarray[userNum]
+        } else {
+            user_QA_angle.innerText = "最喜歡的拍照角度：" + angarray[userNum] + "º"
+        }
+
+        //
+        // setTimeout(function() {
+        //     document.getElementById("photo_window").style.opacity = "1";
+        // }, 300);
+        // setTimeout(function() {
+        //     document.getElementById("qa_window").style.opacity = "1";
+        // }, 100);
+        // setTimeout(function() {
+        //     document.getElementById("video_window").style.opacity = "1";
+        // }, 500);
 
         setTimeout(function() {
             document.getElementById("carousel_window").style.opacity = "1";
