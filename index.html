@@ -10,10 +10,24 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
+<!-- <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+    <defs height="0" width="0">
+    <filter id="change" height="0" width="0">
+    <feColorMatrix height="0" width="0" values="3 -1 -1 0 0
+    -1 3 -1 0 0
+    -1 -1 3 0 0
+    0 0 0 1 0" />
+    </filter>
+    </defs>
+    </svg> -->
 
 <body>
     <main>
+        <div class="top_marquee"><img class="top_marquee_img" src="image/top_marquee2.jpg"></div>
+
         <div id="grid" class="grid-container">
             <div class="grid-item color2" data-user="0" data-video="v_00" data-detail="d_00" data-imgurl="image/b.jpg"><img src="image/test/02.png"></div>
             <div class="grid-item color2" data-user="1" data-video="v_01" data-detail="d_01" data-imgurl="image/b.jpg"><img src="image/test/02.png"></div>
@@ -199,9 +213,9 @@
                             <div class="carousel-item user_photo3">
                                 <img src="image/test/01.png" class="d-block w-100" alt="...">
                             </div>
-                            <div class="carousel-item">
+                            <!-- <div class="carousel-item">
                                 <img src="image/test/01.png" class="d-block w-100" alt="...">
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -214,7 +228,11 @@
 
                     </div>
                     <div class="content_qa_main">
-                        <p>姓名：KEN<br>電話：0937590374<br>地址：X<br>興趣：<br>最喜歡的拍照角度：４５</p>
+                        <p id="qa_name">姓名：KEN</p>
+                        <p id="qa_number">電話：0937000000</p>
+                        <p id="qa_add"> 地址：X</p>
+                        <p id="qa_hobby"> 興趣：</p>
+                        <p id="qa_angle"> 最喜歡的拍照角度：４５</p>
                     </div>
 
                 </div>
