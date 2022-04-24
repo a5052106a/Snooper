@@ -624,7 +624,7 @@ p {
         height: 0%;
     }
     .top_marquee {
-        height: 4vmin;
+        height: 3.5vmin;
         width: 100%;
         display: flex;
         background-color: rgb(53, 73, 250);
@@ -650,7 +650,7 @@ p {
     .testclass {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
-        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
         z-index: 0;
         position: absolute;
     }
