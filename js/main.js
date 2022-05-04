@@ -46,8 +46,8 @@ var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catching = 30;
-get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
+var catching = 8;
+get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
         if (snapshot.val() != null) {
@@ -59,7 +59,7 @@ get(child(dbRef, `WebCam02/${target}`)).then((snapshot) => {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
             for (var i = 0; i < imgarray.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam02/' + imgarray[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam04/' + imgarray[i])).then((url) => {
                     // console.log(url)
                     temp.push(url)
                         // console.log(temp)
@@ -89,9 +89,16 @@ function change() {
                 var tw = imgarray[j].replace(/ /g, "%20")
                     //Webcam 02 ->Webcam%2002
                     // console.log(tw)
-                if (te.includes(tw)) {
-                    imgurl[j] = temp[i]
+
+                if (temp[i] != undefined) {
+                    if (te.includes(tw)) {
+                        imgurl[j] = temp[i]
+                    }
                 }
+
+            }
+            if (temp[i] == undefined) {
+                imgurl[i] = "/image/blank/blank00.jpg"
             }
         }
         //console.log(imgurl)
@@ -113,8 +120,8 @@ var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catching2 = 30;
-get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
+var catching2 = 8;
+get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
         if (snapshot.val() != null) {
@@ -126,7 +133,7 @@ get(child(dbRef, `WebCam01/${target2}`)).then((snapshot) => {
                 imgarray2[dataarray2.length - i - 1] = dataarray2[i]
             }
             for (var i = 0; i < imgarray2.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam01/' + imgarray2[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam03/' + imgarray2[i])).then((url) => {
                     // console.log(url)
                     temp2.push(url)
                     imgcount2++
@@ -159,10 +166,17 @@ function change2() {
                 var tw2 = imgarray2[j].replace(/ /g, "%20")
                     //Webcam 02 ->Webcam%2002
                     // console.log(tw2)
-                if (te2.includes(tw2)) {
-                    imgurl2[j] = temp2[i]
+                if (temp2[i] != undefined) {
+                    if (te2.includes(tw2)) {
+                        imgurl2[j] = temp[i]
+                    }
                 }
+
             }
+            if (temp2[i] == undefined) {
+                imgurl2[i] = "/image/blank/blank00.jpg"
+            }
+
         }
         clearInterval(timetest2)
             // console.log(imgarray2[0])
@@ -187,8 +201,8 @@ var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catching3 = 30;
-get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
+var catching3 = 8;
+get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
         if (snapshot.val() != null) {
@@ -200,7 +214,7 @@ get(child(dbRef, `WebCam01/${target3}`)).then((snapshot) => {
                 imgarray3[dataarray3.length - i - 1] = dataarray3[i]
             }
             for (var i = 0; i < imgarray3.length; i++) {
-                getDownloadURL(ref(storage, '/WebCam01/' + imgarray3[i])).then((url) => {
+                getDownloadURL(ref(storage, '/WebCam02/' + imgarray3[i])).then((url) => {
                     // console.log(url)
                     temp3.push(url)
                     imgcount3++
@@ -233,8 +247,15 @@ function change3() {
                 var tw3 = imgarray3[j].replace(/ /g, "%20")
                     //Webcam 02 ->Webcam%2002
                     // console.log(tw2)
-                if (te3.includes(tw3)) {
-                    imgurl3[j] = temp3[i]
+                if (temp3[i] != undefined) {
+                    if (te3.includes(tw3)) {
+                        imgurl3[j] = temp3[i]
+                    }
+                }
+
+
+                if (temp3[i] == undefined) {
+                    imgurl3[i] = "/image/blank/blank00.jpg"
                 }
             }
         }
@@ -251,117 +272,206 @@ function change3() {
     }
     //document.getElementsByClassName('grid-item')[0]
 }
-//----------- QA DATA NAME-----------
-const data_name = "name";
-var namearray = new Array()
-var namecatching = 5;
-get(child(dbRef, `QA/${data_name}`)).then((snapshot) => {
+
+
+// ------ 輪播圖4 ---------
+
+const target4 = "target";
+var imgarray4 = new Array()
+var imgurl4 = [];
+var imgcount4 = 0
+var temp4 = []
+var catching4 = 8;
+get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
     if (snapshot.exists()) {
+        // console.log(snapshot.val())
         if (snapshot.val() != null) {
-            var dataarrayname = snapshot.val();
-            // console.log(dataarrayname);
-            for (var i = dataarrayname.length - 1; i >= dataarrayname.length - namecatching; i--) {
-                if (dataarrayname[i] == 'x') {
-                    namearray[dataarrayname.length - i - 1] = '拒絕回答！'
-                } else {
-                    namearray[dataarrayname.length - i - 1] = dataarrayname[i]
+            var dataarray4 = snapshot.val();
+            // console.log(dataarray2);
+            // console.log(dataarray2.length - 1)
+            // console.log(dataarray2.length - 10)
+            for (var i = dataarray4.length - 1; i >= dataarray4.length - catching4; i--) {
+                imgarray4[dataarray4.length - i - 1] = dataarray4[i]
+            }
+            for (var i = 0; i < imgarray4.length; i++) {
+                getDownloadURL(ref(storage, '/WebCam01/' + imgarray4[i])).then((url) => {
+                    // console.log(url)
+                    temp4.push(url)
+                    imgcount4++
+                    // console.log(imgcount2)
+                })
+            }
+        }
+        // console.log(imgarray2[4])
+        // console.log(temp2)
+    } else {
+        console.log("No data available");
+    }
+}).catch((error) => {
+    console.error(error);
+});
+var timetest4 = setInterval(change4, 1000);
+
+function change4() {
+    if (imgcount4 != catching4) {
+        // console.log(imgcount2)
+        // console.log(catching2)
+        // console.log(temp2)
+    } else {
+        // console.log(temp2)
+        for (i = 0; i < catching4; i++) {
+            //URL temp 進行10次
+            for (var j = 0; j < catching4; j++) {
+                // url 對imgarray進行全體掃秒
+                var te4 = temp4[i] //url : https://asdasdasdasd%20Webcam
+                var tw4 = imgarray4[j].replace(/ /g, "%20")
+                    //Webcam 02 ->Webcam%2002
+                    // console.log(tw2)
+                if (temp4[i] != undefined) {
+                    if (te4.includes(tw4)) {
+                        imgurl4[j] = temp4[i]
+                    }
                 }
 
-            }
-            // console.log(namearray)
-            // console.log(namearray[0])
-        }
-    }
-})
 
-//----------- QA DATA NUMBER-----------
-const data_num = "phone_number";
-var numarray = new Array()
-var numcatching = 5;
-get(child(dbRef, `QA/${data_num}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-        if (snapshot.val() != null) {
-            var dataarraynum = snapshot.val();
-            // console.log(dataarraynum);
-            for (var i = dataarraynum.length - 1; i >= dataarraynum.length - numcatching; i--) {
-                if (dataarraynum[i] == 'x') {
-                    numarray[dataarraynum.length - i - 1] = '拒絕回答！'
-                } else {
-                    numarray[dataarraynum.length - i - 1] = dataarraynum[i]
-                }
-
-            }
-            // console.log(numarray)
-            // console.log(numarray[0])
-        }
-    }
-})
-
-//----------- QA DATA ADD-----------
-const data_add = "address";
-var addarray = new Array()
-var addcatching = 5;
-get(child(dbRef, `QA/${data_add}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-        if (snapshot.val() != null) {
-            var dataarrayadd = snapshot.val();
-            // console.log(dataarrayadd);
-            for (var i = dataarrayadd.length - 1; i >= dataarrayadd.length - addcatching; i--) {
-                // console.log(dataarrayadd[i])
-                if (dataarrayadd[i] == 'x') {
-                    addarray[dataarrayadd.length - i - 1] = '拒絕回答！'
-                } else {
-                    addarray[dataarrayadd.length - i - 1] = dataarrayadd[i]
-                }
-            }
-
-        }
-    }
-})
-
-//----------- QA DATA HOBBY-----------
-const data_hob = "hobby";
-var hobarray = new Array()
-var hobcatching = 5;
-get(child(dbRef, `QA/${data_hob}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-        if (snapshot.val() != null) {
-            var dataarrayhob = snapshot.val();
-            // console.log(dataarrayhob);
-            for (var i = dataarrayhob.length - 1; i >= dataarrayhob.length - hobcatching; i--) {
-                if (dataarrayhob[i] == 'x') {
-                    hobarray[dataarrayhob.length - i - 1] = '拒絕回答！'
-                } else {
-                    hobarray[dataarrayhob.length - i - 1] = dataarrayhob[i]
-                }
-            }
-            // console.log(hobarray)
-            // console.log(hobarray[0])
-        }
-    }
-})
-
-//----------- QA DATA ANGLE-----------
-const data_ang = "angle";
-var angarray = new Array()
-var angcatching = 5;
-get(child(dbRef, `QA/${data_ang}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-        if (snapshot.val() != null) {
-            var dataarrayang = snapshot.val();
-            // console.log(dataarrayang);
-            for (var i = dataarrayang.length - 1; i >= dataarrayang.length - angcatching; i--) {
-                if (dataarrayang[i] == 'x') {
-                    angarray[dataarrayang.length - i - 1] = '拒絕回答！'
-                } else {
-                    angarray[dataarrayang.length - i - 1] = dataarrayang[i]
+                if (temp4[i] == undefined) {
+                    imgurl4[i] = "/image/blank/blank00.jpg"
+                        // console.log(imgurl4[i])
                 }
             }
         }
+        clearInterval(timetest4)
+            // console.log(imgarray4[0])
+            // console.log(imgurl2[0])
+
+        // for (var i = 0; i < catching2; i++) {
+        //     console.log(imgurl[i])
+        //     var carousel_img = document.getElementsByClassName("user_photo2")[i].getElementsByTagName("img")[0];
+        //     carousel_img.src = imgurl2[i]
+        //     clearInterval(timetest)
+        // }
+    }
+    //document.getElementsByClassName('grid-item')[0]
+}
+//----------- QA DATA first catch-----------
+{
+    // const data_name = "name";
+    // var namearray = new Array()
+    // var namecatching = 5;
+    // get(child(dbRef, `QA/${data_name}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         if (snapshot.val() != null) {
+    //             var dataarrayname = snapshot.val();
+    //             console.log(dataarrayname);
+    //             for (var i = dataarrayname.length - 1; i >= dataarrayname.length - namecatching; i--) {
+    //                 if (dataarrayname[i] == 'x') {
+    //                     namearray[dataarrayname.length - i - 1] = '拒絕回答！'
+    //                 } else {
+    //                     namearray[dataarrayname.length - i - 1] = dataarrayname[i]
+    //                 }
+
+    //             }
+    //             console.log(namearray)
+    //             console.log(namearray[0])
+    //         }
+    //     }
+    // })
+
+    //----------- QA DATA NUMBER-----------
+    // const data_num = "phone_number";
+    // var numarray = new Array()
+    // var numcatching = 5;
+    // get(child(dbRef, `QA/${data_num}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         if (snapshot.val() != null) {
+    //             var dataarraynum = snapshot.val();
+    //             for (var i = dataarraynum.length - 1; i >= dataarraynum.length - numcatching; i--) {
+    //                 if (dataarraynum[i] == 'x') {
+    //                     numarray[dataarraynum.length - i - 1] = '拒絕回答！'
+    //                 } else {
+    //                     numarray[dataarraynum.length - i - 1] = dataarraynum[i]
+    //                 }
+
+    //             }
+    //         }
+    //     }
+    // })
+
+    //----------- QA DATA ADD-----------
+    // const data_add = "address";
+    // var addarray = new Array()
+    // var addcatching = 5;
+    // get(child(dbRef, `QA/${data_add}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         if (snapshot.val() != null) {
+    //             var dataarrayadd = snapshot.val();
+    //             for (var i = dataarrayadd.length - 1; i >= dataarrayadd.length - addcatching; i--) {
+    //                 if (dataarrayadd[i] == 'x') {
+    //                     addarray[dataarrayadd.length - i - 1] = '拒絕回答！'
+    //                 } else {
+    //                     addarray[dataarrayadd.length - i - 1] = dataarrayadd[i]
+    //                 }
+    //             }
+
+    //         }
+    //     }
+    // })
+
+    //----------- QA DATA HOBBY-----------
+    // const data_hob = "hobby";
+    // var hobarray = new Array()
+    // var hobcatching = 5;
+    // get(child(dbRef, `QA/${data_hob}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         if (snapshot.val() != null) {
+    //             var dataarrayhob = snapshot.val();
+    //             for (var i = dataarrayhob.length - 1; i >= dataarrayhob.length - hobcatching; i--) {
+    //                 if (dataarrayhob[i] == 'x') {
+    //                     hobarray[dataarrayhob.length - i - 1] = '拒絕回答！'
+    //                 } else {
+    //                     hobarray[dataarrayhob.length - i - 1] = dataarrayhob[i]
+    //                 }
+    //             }
+    //         }
+    //     }
+    // })
+
+    //----------- QA DATA ANGLE-----------
+    // const data_ang = "angle";
+    // var angarray = new Array()
+    // var angcatching = 5;
+    // get(child(dbRef, `QA/${data_ang}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         if (snapshot.val() != null) {
+    //             var dataarrayang = snapshot.val();
+    //             for (var i = dataarrayang.length - 1; i >= dataarrayang.length - angcatching; i--) {
+    //                 if (dataarrayang[i] == 'x') {
+    //                     angarray[dataarrayang.length - i - 1] = '拒絕回答！'
+    //                 } else {
+    //                     angarray[dataarrayang.length - i - 1] = dataarrayang[i]
+    //                 }
+    //             }
+    //         }
+    //     }
+    // })
+}
+
+// -----------------------    QA DATA Catching    ----------------------------
+const data_qa = "target";
+var qa_array = new Array()
+var qa_catahing = 8;
+get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        if (snapshot.val() != null) {
+            var data_array_qa = snapshot.val();
+            for (var i = data_array_qa.length - 1; i >= data_array_qa.length - qa_catahing; i--) {
+                qa_array[data_array_qa.length - i - 1] = data_array_qa[i]
+            }
+        }
+        // console.log(qa_array)
+        // console.log(qa_array[2])
     }
 })
-
-
 
 //------ 單張照片抓取 -------
 {
@@ -610,7 +720,7 @@ get(child(dbRef, `QA/${data_ang}`)).then((snapshot) => {
     // Img29.src = "https://firebasestorage.googleapis.com/v0/b/snooper-ab1f9.appspot.com/o/z.jpg?alt=media&token=1bb43514-20ba-4a9e-bcaa-fcaa7a9586d7"
 
     //-----------loading
-    setTimeout(timer1, 3000);
+    setTimeout(timer1, 100);
 
     function timer1() {
         document.getElementById("loading-bg").style.opacity = "0";
@@ -621,46 +731,81 @@ get(child(dbRef, `QA/${data_ang}`)).then((snapshot) => {
     // setInterval(timer2, 1000);
 
     // function timer2() {
-    //     document.getElementById("photo_window").style.opacity = "1";
+    //     document.getElementById("about1_window").style.opacity = "1";
     // }
 }
+
+
 
 
 // page1 : on click go to page2
 //測試所有class進行動作
 var test1 = document.getElementsByClassName('grid-item')
 for (var i = 0; i < test1.length; i++) {
+
     test1[i].addEventListener('click', function(event) {
-        //alert(this.dataset.user)
-        document.getElementById("content").style.zIndex = "5";
-        document.getElementById("grid").style.opacity = "0";
+        console.log(i)
+        document.getElementById("page2").style.zIndex = "5";
+        // document.getElementById("grid").style.opacity = "0";
 
         // console.log(imgurl2[1])
         var userNum = this.dataset.user
-        console.log(imgurl2[userNum])
+            // console.log(imgurl2[userNum])
         var user_photo2 = document.getElementsByClassName("user_photo2")[0].getElementsByTagName("img")[0]
-        console.log(user_photo2)
+        if (imgurl2[userNum] == undefined) {
+            imgurl2[userNum] = "/image/blank/blank00.jpg"
+        }
         user_photo2.src = imgurl2[userNum]
         var user_photo3 = document.getElementsByClassName("user_photo3")[0].getElementsByTagName("img")[0]
-        user_photo3.src = imgurl3[userNum]
-        var user_QA_name = document.getElementById("qa_name")
-        user_QA_name.innerText = "姓名：" + namearray[userNum]
-        var user_QA_number = document.getElementById("qa_number")
-        user_QA_number.innerText = "聯絡電話：" + numarray[userNum]
-        var user_QA_address = document.getElementById("qa_add")
-        user_QA_address.innerText = "地址：" + addarray[userNum]
-        var user_QA_hobby = document.getElementById("qa_hobby")
-        user_QA_hobby.innerText = "興趣：" + hobarray[userNum]
-        var user_QA_angle = document.getElementById("qa_angle")
-        if (angarray[userNum] == '拒絕回答！') {
-            user_QA_angle.innerText = "最喜歡的拍照角度：" + angarray[userNum]
-        } else {
-            user_QA_angle.innerText = "最喜歡的拍照角度：" + angarray[userNum] + "º"
+        if (imgurl3[userNum] == undefined) {
+            imgurl3[userNum] = "/image/blank/blank00.jpg"
         }
+        user_photo3.src = imgurl3[userNum]
+        var user_photo4 = document.getElementsByClassName("user_photo4")[0].getElementsByTagName("img")[0]
+        if (imgurl4[userNum] == undefined) {
+            imgurl4[userNum] = "/image/blank/blank00.jpg"
+        }
+        user_photo4.src = imgurl4[userNum]
+            // console.log(user_photo4.src)
+
+        var name = qa_array[userNum].name
+        if (name == 'x') {
+            name = '拒絕回答！'
+        }
+        var phone_number = qa_array[userNum].phone_number
+        if (phone_number == 'x') {
+            phone_number = '拒絕回答！'
+        }
+        var address = qa_array[userNum].address
+        if (address == 'x') {
+            address = '拒絕回答！'
+        }
+        var hobby = qa_array[userNum].hobby
+        if (hobby == 'x') {
+            hobby = '拒絕回答！'
+        }
+        var angle = qa_array[userNum].angle
+        if (angle == 'x') {
+            angle = '拒絕回答！'
+        } else {
+            angle = angle + "º"
+        }
+        // console.log(qa_array[userNum])
+        document.getElementById("qa_name").innerText = "姓名：" + name
+        document.getElementById("qa_number").innerText = "聯絡電話：" + phone_number
+        document.getElementById("qa_add").innerText = "地址：" + address
+        document.getElementById("qa_hobby").innerText = "興趣：" + hobby
+        document.getElementById("qa_angle").innerText = "最喜歡的拍照角度：" + angle
+
+        // if (angarray[userNum] == '拒絕回答！') {
+        //     user_QA_angle.innerText = "最喜歡的拍照角度：" + angel
+        // } else {
+        //     user_QA_angle.innerText = "最喜歡的拍照角度：" + angel + "º"
+        // }
 
         //
         // setTimeout(function() {
-        //     document.getElementById("photo_window").style.opacity = "1";
+        //     document.getElementById("about1_window").style.opacity = "1";
         // }, 300);
         // setTimeout(function() {
         //     document.getElementById("qa_window").style.opacity = "1";
@@ -671,7 +816,7 @@ for (var i = 0; i < test1.length; i++) {
 
         setTimeout(function() {
             document.getElementById("carousel_window").style.opacity = "1";
-        }, 100);
+        }, 10);
         var classbackimg = this.getElementsByTagName('img')[0].src
             // var num = this.getElementsByClassName("grid-item")[0].dataset.user
             //alert(classbackimg)
@@ -725,12 +870,47 @@ document.getElementsByClassName('grid-item')[1]
         // document.getElementsByClassName('test').style.opacity = "0";
     });
 */
+//click about square  -------------------------------------------------
+document.getElementsByClassName('introduce-item')[1]
+    .addEventListener('click', function(event) {
+        console.log(document.getElementsByClassName('window_header_close'));
+        document.getElementsByClassName('window_header_close')[3].style.zIndex = "-1";
+        //document.getElementsByClassName('window_header_close')[3].style.zIndex="-1";
+        document.getElementsByClassName('window_header_close')[1].style.zIndex = "1";
+        document.getElementsByClassName('window_header_close')[2].style.zIndex = "1";
+        document.getElementById("about1_window").style.zIndex = "1";
+        document.getElementById("about2_window").style.zIndex = "1";
+        document.getElementById("page2").style.zIndex = "5";
+        document.getElementsByClassName('testclass_img')[0].src = "image/about/about.jpg";
+        var bg_about = document.getElementsByClassName('testclass_img');
+        console.log("b")
+        for (i in bg_about) {
+            bg_about[i].src = "image/about/about.jpg"
+        }
 
-//------- page2 : close_button on click
+
+    })
+    //click video square  -------------------------------------------------
+document.getElementsByClassName('introduce-item')[2]
+    .addEventListener('click', function(event) {
+        document.getElementsByClassName('window_header_close')[3].style.zIndex = "1";
+        document.getElementsByClassName('window_header_close')[1].style.zIndex = "-1";
+        document.getElementsByClassName('window_header_close')[2].style.zIndex = "-1";
+        document.getElementById("video_window").style.zIndex = "1";
+        document.getElementById("page2").style.zIndex = "5";
+        document.getElementsByClassName('testclass_img')[0].src = "image/video/video3.jpg";
+        var bg_about = document.getElementsByClassName('testclass_img');
+        for (i in bg_about) {
+            bg_about[i].src = "image/video/video3.jpg"
+        }
+
+    })
+    //------- page2 : close_button on click
 document.getElementsByClassName('window_header_close')[0]
     .addEventListener('click', function(event) {
-        document.getElementById("content").style.zIndex = "-1";
-        document.getElementById("grid").style.opacity = "1";
+        document.getElementById("page2").style.zIndex = "-1";
+        document.getElementById("carousel_window").style.opacity = "0";
+        // document.getElementById("grid").style.opacity = "1";
         var showback = document.getElementsByClassName("testclass")[0];
         showback.style = "display:grid;background:none;"
         document.getElementsByClassName("testclass_img").src = "";
@@ -759,24 +939,39 @@ document.getElementsByClassName('window_header_close')[0]
         }
         //console.log(hatest);
     });
-// document.getElementsByClassName('window_header_close')[0]
-//     .addEventListener('click', function(event) {
-//         document.getElementById("content").style.zIndex = "-1";
-//         document.getElementById("grid").style.opacity = "1";
-// document.getElementById("photo_window").style.opacity = "0";
-// document.getElementById("qa_window").style.opacity = "0";
-// document.getElementById("video_window").style.opacity = "0";
-//     var showback = document.getElementsByClassName("testclass")[0];
-//     showback.style = "display:grid;background:none;"
-//     document.getElementsByClassName("testclass_img").src = "";
-// });
+document.getElementsByClassName('window_header_close')[1]
+    .addEventListener('click', function(event) {
+        document.getElementById("page2").style.zIndex = "-1";
+        document.getElementById("about1_window").style.zIndex = "-1";
+        document.getElementById("about2_window").style.zIndex = "-1";
+        var showback = document.getElementsByClassName("testclass")[0];
+        showback.style = "display:grid;background:none;"
+        document.getElementsByClassName("testclass_img").src = "";
+    });
+document.getElementsByClassName('window_header_close')[2]
+    .addEventListener('click', function(event) {
+        document.getElementById("page2").style.zIndex = "-1";
+        document.getElementById("about1_window").style.zIndex = "-1";
+        document.getElementById("about2_window").style.zIndex = "-1";
+        var showback = document.getElementsByClassName("testclass")[0];
+        showback.style = "display:grid;background:none;"
+        document.getElementsByClassName("testclass_img").src = "";
+    });
+document.getElementsByClassName('window_header_close')[3]
+    .addEventListener('click', function(event) {
+        document.getElementById("page2").style.zIndex = "-1";
+        document.getElementById("video_window").style.zIndex = "-1";
+        var showback = document.getElementsByClassName("testclass")[0];
+        showback.style = "display:grid;background:none;"
+        document.getElementsByClassName("testclass_img").src = "";
+    });
 // document.getElementsByClassName('window_header_close')[1]
 //     .addEventListener('click', function(event) {
 //         document.getElementById("content").style.zIndex = "-1";
 //         document.getElementById("grid").style.opacity = "1";
-//         document.getElementById("photo_window").style.opacity = "0";
-//         document.getElementById("qa_window").style.opacity = "0";
-//         document.getElementById("video_window").style.opacity = "0";
+//         // document.getElementById("about1_window").style.opacity = "0";
+//         // document.getElementById("qa_window").style.opacity = "0";
+//         document.getElementById("video_window").style.zIndex = "0"
 //         var showback = document.getElementsByClassName("testclass")[0];
 //         showback.style = "display:grid;background:none;"
 //     });
@@ -784,7 +979,7 @@ document.getElementsByClassName('window_header_close')[0]
 //     .addEventListener('click', function(event) {
 //         document.getElementById("content").style.zIndex = "-1";
 //         document.getElementById("grid").style.opacity = "1";
-//         document.getElementById("photo_window").style.opacity = "0";
+//         document.getElementById("about1_window").style.opacity = "0";
 //         document.getElementById("qa_window").style.opacity = "0";
 //         document.getElementById("video_window").style.opacity = "0";
 //     });
@@ -793,7 +988,7 @@ document.getElementsByClassName('window_header_close')[0]
 //         console.log("close")
 //         document.getElementById("content").style.zIndex = "-1";
 //         document.getElementById("grid").style.opacity = "1";
-//         document.getElementById("photo_window").style.opacity = "0";
+//         document.getElementById("about1_window").style.opacity = "0";
 //         document.getElementById("qa_window").style.opacity = "0";
 //         document.getElementById("video_window").style.opacity = "0";
 //         document.getElementsByClassName("testclass_img").src = "";
