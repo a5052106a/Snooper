@@ -900,6 +900,7 @@ document.getElementsByClassName('introduce-item')[2]
         document.getElementById("page2").style.zIndex = "5";
         document.getElementsByClassName('testclass_img')[0].src = "image/video/video3.jpg";
         var bg_about = document.getElementsByClassName('testclass_img');
+        document.getElementsByClassName("video")[0].play();
         for (i in bg_about) {
             bg_about[i].src = "image/video/video3.jpg"
         }
@@ -961,6 +962,7 @@ document.getElementsByClassName('window_header_close')[3]
     .addEventListener('click', function(event) {
         document.getElementById("page2").style.zIndex = "-1";
         document.getElementById("video_window").style.zIndex = "-1";
+        document.getElementsByClassName("video")[0].load();
         var showback = document.getElementsByClassName("testclass")[0];
         showback.style = "display:grid;background:none;"
         document.getElementsByClassName("testclass_img").src = "";
