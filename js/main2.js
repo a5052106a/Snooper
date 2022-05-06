@@ -309,7 +309,7 @@ function change2() {
                     // console.log(tw2)
                 if (temp2[i] != undefined) {
                     if (te2.includes(tw2)) {
-                        imgurl2[j] = temp[i]
+                        imgurl2[j] = temp2[i]
                     }
                 }
 
