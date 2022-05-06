@@ -118,6 +118,7 @@ function change() {
             }
             if (temp[i] == undefined) {
                 imgurl[i] = "./image/blank/blank00.jpg"
+                console.log(imgurl[i])
             }
         }
         console.log(imgurl)
@@ -131,7 +132,7 @@ function change() {
         for (var i = 0; i < catching; i++) {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
                 //console.log(undechesrc)
-            if (undechesrc == "/image/blank/blank00.jpg") {
+            if (undechesrc == "./image/blank/blank00.jpg") {
                 console.log("abcdefg")
             } else {
                 console.log(ttt)
@@ -139,7 +140,7 @@ function change() {
                     //測試所有class進行動作
                 var test1 = document.getElementsByClassName('grid-item')
                 for (var k = 0; k < ttt; k++) {
-                    if (test1[k].getElementsByTagName("img")[0].src != "/image/blank/blank00.jpg") {
+                    if (test1[k].getElementsByTagName("img")[0].src != "./image/blank/blank00.jpg") {
                         test1[k].addEventListener('click', function(event) {
                             document.getElementsByClassName('window_header_close')[0].style.zIndex = "1";
                             document.getElementById("page2").style.zIndex = "5";
@@ -147,11 +148,17 @@ function change() {
 
                             // console.log(imgurl2[1])
                             var userNum = this.dataset.user
-                            console.log(imgurl2[userNum])
+                                // console.log(imgurl2[userNum])
                             var user_photo2 = document.getElementsByClassName("user_photo2")[0].getElementsByTagName("img")[0]
+                            if (imgurl2[userNum] == undefined) {
+                                imgurl2[userNum] = "/image/blank/blank00.jpg"
+                            }
                             console.log(user_photo2)
                             user_photo2.src = imgurl2[userNum]
                             var user_photo3 = document.getElementsByClassName("user_photo3")[0].getElementsByTagName("img")[0]
+                            if (imgurl3[userNum] == undefined) {
+                                imgurl3[userNum] = "/image/blank/blank00.jpg"
+                            }
                             user_photo3.src = imgurl3[userNum]
                             var user_photo4 = document.getElementsByClassName("user_photo4")[0].getElementsByTagName("img")[0]
                             if (imgurl4[userNum] == undefined) {
@@ -179,14 +186,14 @@ function change() {
                             if (angle == 'x') {
                                 angle = '拒絕回答！'
                             } else {
-                                angle = angle + "º"
+                                angle = angle + "公斤"
                             }
                             console.log(qa_array[userNum])
-                            document.getElementById("qa_name").innerText = "姓名：" + name
-                            document.getElementById("qa_number").innerText = "聯絡電話：" + phone_number
-                            document.getElementById("qa_add").innerText = "地址：" + address
-                            document.getElementById("qa_hobby").innerText = "興趣：" + hobby
-                            document.getElementById("qa_angle").innerText = "最喜歡的拍照角度：" + angle
+                            document.getElementById("qa_name").innerText = "血型：" + name
+                            document.getElementById("qa_number").innerText = "最喜歡的五官：" + phone_number
+                            document.getElementById("qa_add").innerText = "年齡：" + address
+                            document.getElementById("qa_hobby").innerText = "性別：" + hobby
+                            document.getElementById("qa_angle").innerText = "體重：" + angle
 
                             // if (angarray[userNum] == '拒絕回答！') {
                             //     user_QA_angle.innerText = "最喜歡的拍照角度：" + angel
@@ -252,7 +259,7 @@ var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catching2 = 30;
+var catching2 = 60;
 get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -335,7 +342,7 @@ var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catching3 = 30;
+var catching3 = 60;
 get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -415,7 +422,7 @@ var imgarray4 = new Array()
 var imgurl4 = [];
 var imgcount4 = 0
 var temp4 = []
-var catching4 = 8;
+var catching4 = 60;
 get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
