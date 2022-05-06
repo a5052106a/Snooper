@@ -867,7 +867,7 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
     // Img29.src = "https://firebasestorage.googleapis.com/v0/b/snooper-ab1f9.appspot.com/o/z.jpg?alt=media&token=1bb43514-20ba-4a9e-bcaa-fcaa7a9586d7"
 
     //-----------loading
-    setTimeout(timer1, 1000 * 3);
+    setTimeout(timer1, 1000 * 30);
 
     function timer1() {
         document.getElementById("loading-bg").style.opacity = "0";
