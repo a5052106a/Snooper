@@ -151,6 +151,7 @@ function change() {
                             console.log(imgurl2[userNum])
 
                             var user_photo2 = document.getElementsByClassName("user_photo2")[0].getElementsByTagName("img")[0]
+
                             if (imgurl2[userNum] == undefined) {
                                 imgurl2[userNum] = "/image/blank/blank00.jpg"
                             }
@@ -164,9 +165,9 @@ function change() {
                             user_photo3.src = imgurl3[userNum]
 
                             var user_photo4 = document.getElementsByClassName("user_photo4")[0].getElementsByTagName("img")[0]
-                                // if (imgurl4[userNum] == undefined) {
-                                //     imgurl4[userNum] = "/image/blank/blank00.jpg"
-                                // }
+                            if (imgurl4[userNum] == undefined) {
+                                imgurl4[userNum] = "/image/blank/blank00.jpg"
+                            }
                             user_photo4.src = imgurl4[userNum]
 
                             var name = qa_array[userNum].name
@@ -425,7 +426,7 @@ var imgarray4 = new Array()
 var imgurl4 = [];
 var imgcount4 = 0
 var temp4 = []
-var catching4 = 8;
+var catching4 = 60;
 get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -443,6 +444,8 @@ get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
                     temp4.push(url)
                     imgcount4++
                     // console.log(imgcount2)
+                }).catch((error) => {
+                    imgcount4++
                 })
             }
         }
@@ -480,12 +483,11 @@ function change4() {
 
                 if (temp4[i] == undefined) {
                     imgurl4[i] = "/image/blank/blank00.jpg"
-                        // console.log(imgurl4[i])
                 }
             }
         }
         clearInterval(timetest4)
-            // console.log(imgarray4[0])
+            // console.log(imgarray2[0])
             // console.log(imgurl2[0])
 
         // for (var i = 0; i < catching2; i++) {
@@ -865,7 +867,7 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
     // Img29.src = "https://firebasestorage.googleapis.com/v0/b/snooper-ab1f9.appspot.com/o/z.jpg?alt=media&token=1bb43514-20ba-4a9e-bcaa-fcaa7a9586d7"
 
     //-----------loading
-    setTimeout(timer1, 1000 * 40);
+    setTimeout(timer1, 1000 * 3);
 
     function timer1() {
         document.getElementById("loading-bg").style.opacity = "0";
