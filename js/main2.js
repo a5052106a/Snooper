@@ -875,6 +875,21 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
     }
 
 
+    // document.getElementById("loading-video").style.opacity = ".5";
+    document.getElementsByClassName("loading-gif")[0].play();
+    // const pageAccessedByReload = (
+    //     (window.performance.navigation && window.performance.navigation.type === 1) ||
+    //     window.performance
+    //     .getEntriesByType('navigation')
+    //     .map((nav) => nav.type)
+    //     .includes('reload')
+    // );
+
+    // document.getElementById("loading-bg").load(pageAccessedByReload);
+    // alert(pageAccessedByReload);
+
+
+
     // setInterval(timer2, 1000);
 
     // function timer2() {
