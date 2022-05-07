@@ -876,7 +876,9 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
 
 
     // document.getElementById("loading-video").style.opacity = ".5";
-    document.getElementsByClassName("loading-gif")[0].play();
+    // document.getElementsByClassName("loading-gif")[0].play();
+
+
     // const pageAccessedByReload = (
     //     (window.performance.navigation && window.performance.navigation.type === 1) ||
     //     window.performance
