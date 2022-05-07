@@ -873,10 +873,12 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
         document.getElementById("loading-bg").style.opacity = "0";
         document.getElementById("loading-bg").style.zIndex = "-10";
     }
-
+    var randa = Math.random() * 1000;
+    document.getElementsByClassName("loading-gif")[0].src = "image/loading.gif?" + randa
 
     // document.getElementById("loading-video").style.opacity = ".5";
-    // document.getElementsByClassName("loading-gif")[0].play();
+    // document.getElementsByClassName("loading-gif")[0].reload();
+
 
 
     // const pageAccessedByReload = (
