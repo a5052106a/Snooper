@@ -46,7 +46,7 @@ var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catching = 20;
+var catching = 60;
 var ttt = 0;
 get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -88,7 +88,7 @@ function change() {
         if (imgcount >= ttt) {
             // console.log("get OK")
             // console.log(temp)
-            imgcount++
+            imgcount = catching
         }
     } else {
         //console.log(temp)
@@ -263,7 +263,7 @@ var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catching2 = 20;
+var catching2 = 60;
 get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -346,7 +346,7 @@ var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catching3 = 20;
+var catching3 = 60;
 get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -426,7 +426,7 @@ var imgarray4 = new Array()
 var imgurl4 = [];
 var imgcount4 = 0
 var temp4 = []
-var catching4 = 20;
+var catching4 = 60;
 get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
