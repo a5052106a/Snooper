@@ -27,7 +27,7 @@ img {
 }
 
 .loading-gif {
-    border-radius: 20%;
+    /* border-radius: 20%; */
     width: 150% !important;
     margin: auto auto;
 }
