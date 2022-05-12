@@ -313,20 +313,19 @@ img {
 
 h5 {
     color: #fff;
-    font-size: 14px;
+    /* font-size: 14px; */
     /* line-height: 1.64em; */
-    letter-spacing: .2em;
+    /* letter-spacing: .2em; */
     text-align: center;
     justify-content: center;
     margin: 0 auto;
 }
 
-.window p {
-    /* text-align: left; */
-    font-size: 12px;
+.about_p {
+    /* font-size: 12px; */
     color: white;
-    line-height: 2em;
-    letter-spacing: 0.2em;
+    /* line-height: 2em; */
+    /* letter-spacing: 0.2em; */
 }
 
 .content_qa_main {
@@ -336,7 +335,7 @@ h5 {
     overflow: hidden;
 }
 
-.content_qa_main p {
+.qa_p {
     font-size: 10px;
     color: white;
     line-height: 1.64em;
@@ -457,12 +456,11 @@ h5 {
         justify-content: center;
         margin: 0 auto;
     }
-    .window p {
-        /* text-align: left; */
-        font-size: 15px;
+    .about_p {
+        /* font-size: 15px;
         color: white;
         line-height: 1.64em;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.1em; */
     }
     .content_qa_main {
         padding: 4% 5%;
@@ -547,7 +545,7 @@ h5 {
         background-color: black;
         width: 90%;
         height: auto;
-        top: 5%;
+        top: 2%;
         left: -2%;
         z-index: -1;
         opacity: 1;
@@ -572,18 +570,19 @@ h5 {
     h5 {
         color: #fff;
         font-size: 19px;
-        /* line-height: 1.64em; */
         letter-spacing: .2em;
         text-align: center;
         justify-content: center;
         margin: 0 auto;
     }
-    .window p {
-        /* text-align: left; */
-        font-size: 16px;
+    .about_p {
+        /* font-size: 16px;
         color: white;
         line-height: 1.64em;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.1em; */
+    }
+    .qa_p {
+        font-size: 16px;
     }
     .testclass {
         display: grid;
@@ -679,7 +678,7 @@ h5 {
         background-color: black;
         width: 100%;
         height: auto;
-        top: 15%;
+        top: 7%;
         left: 0;
         z-index: 1;
         opacity: 0;
@@ -868,15 +867,14 @@ h5 {
         justify-content: center;
         margin: 0 auto;
     }
-    .window p {
-        /* text-align: left; */
-        font-size: 16px;
-        color: white;
-        line-height: 1.64em;
-        letter-spacing: 0.1em;
+    .about_p {
+        /* font-size: 16px; */
+        /* color: white; */
+        /* line-height: 1.64em; */
+        /* letter-spacing: 0.1em; */
     }
-    .content_qa_main p {
-        font-size: 14px;
+    .qa_p {
+        font-size: 16px;
         color: white;
         line-height: 1.64em;
         letter-spacing: 0.08em;
