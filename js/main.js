@@ -46,7 +46,7 @@ var imgarray = new Array()
 var imgurl = [];
 var imgcount = 0
 var temp = [];
-var catching = 15;
+var catching = 13;
 get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
     if (snapshot.exists()) {
         //console.log(snapshot.val());
@@ -122,7 +122,7 @@ var imgarray2 = new Array()
 var imgurl2 = [];
 var imgcount2 = 0
 var temp2 = []
-var catching2 = 8;
+var catching2 = 13;
 get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         if (snapshot.val() != null) {
@@ -164,7 +164,7 @@ function change2() {
                 var tw2 = imgarray2[j].replace(/ /g, "%20")
                 if (temp2[i] != undefined) {
                     if (te2.includes(tw2)) {
-                        imgurl2[j] = temp[i]
+                        imgurl2[j] = temp2[i]
                     }
                 }
             }
@@ -185,7 +185,7 @@ var imgarray3 = new Array()
 var imgurl3 = [];
 var imgcount3 = 0
 var temp3 = []
-var catching3 = 8;
+var catching3 = 13;
 get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         if (snapshot.val() != null) {
@@ -236,7 +236,7 @@ var imgarray4 = new Array()
 var imgurl4 = [];
 var imgcount4 = 0
 var temp4 = []
-var catching4 = 8;
+var catching4 = 13;
 get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
     if (snapshot.exists()) {
         // console.log(snapshot.val())
@@ -482,13 +482,14 @@ for (var i = 0; i < test1.length; i++) {
         if (angle == 'x') {
             angle = '拒絕回答！'
         } else {
-            angle = angle + "º"
+            angle = angle + "公斤"
         }
-        document.getElementById("qa_name").innerText = "姓名：" + name
-        document.getElementById("qa_number").innerText = "聯絡電話：" + phone_number
-        document.getElementById("qa_add").innerText = "地址：" + address
-        document.getElementById("qa_hobby").innerText = "興趣：" + hobby
-        document.getElementById("qa_angle").innerText = "最喜歡的拍照角度：" + angle
+        console.log(qa_array[userNum])
+        document.getElementById("qa_name").innerText = "血型：" + name
+        document.getElementById("qa_number").innerText = "最喜歡的五官：" + phone_number
+        document.getElementById("qa_add").innerText = "年齡：" + address
+        document.getElementById("qa_hobby").innerText = "性別：" + hobby
+        document.getElementById("qa_angle").innerText = "體重：" + angle
 
 
         setTimeout(function() {
