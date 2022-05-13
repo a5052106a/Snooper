@@ -363,6 +363,8 @@ h5 {
     padding: 2%;
 }
 
+.about {}
+
 
 /* 375 425 768 960 */
 
@@ -737,6 +739,7 @@ h5 {
     .about_img {
         width: 100%;
         /* border: 2px solid rgb(53, 73, 250); */
+        background-image: url("https://a5052106a.github.io/Snooper/image/about/about3.jpg");
     }
     .introduce-item {
         border: 2px solid rgb(53, 73, 250);
