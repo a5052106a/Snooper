@@ -40,7 +40,7 @@ img {
     opacity: 1;
 }
 
-.grid_introduce5 {
+.grid_introduce {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     background-color: rgb(53, 73, 250);
@@ -52,6 +52,25 @@ img {
     border: 1px solid rgb(53, 73, 250);
     text-align: center;
     transition: all 200ms ease;
+}
+
+.introduce-item img {
+    /* scale: 2; */
+}
+
+.logo_img {
+    /* min-width: 150px; */
+    scale: 2 !important;
+}
+
+.about_img {
+    /* min-width: 150px; */
+    scale: 2;
+}
+
+.video_img {
+    /* min-width: 150px; */
+    scale: 2;
 }
 
 .top_marquee {
@@ -113,7 +132,8 @@ img {
 }
 
 .content_carousel_main {
-    width: 75vmin;
+    /* width: 75vmin; */
+    width: 85%;
     background-color: black;
     margin: 10px auto;
     padding: 10px 0px;
@@ -286,8 +306,8 @@ img {
     background-color: black;
     width: 100%;
     height: auto;
-    top: 10%;
-    left: -2%;
+    top: 8%;
+    left: -6%;
     z-index: -1;
     opacity: 1;
 }
@@ -296,14 +316,14 @@ img {
     background-color: black;
     width: 100%;
     height: auto;
-    top: 55%;
-    right: 0%;
+    top: 47%;
+    right: -5%;
     z-index: -1;
     display: block;
     opacity: 1;
 }
 
-.content_about_1_main {
+.content_about_main {
     width: auto;
     height: auto;
     background-color: black;
@@ -313,19 +333,33 @@ img {
 
 h5 {
     color: #fff;
-    /* font-size: 14px; */
-    /* line-height: 1.64em; */
-    /* letter-spacing: .2em; */
+    font-size: 16px;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+    letter-spacing: .2em;
 }
 
-.about_p {
-    /* font-size: 12px; */
+.about_p_1 {
+    font-size: 13px;
     color: white;
-    /* line-height: 2em; */
-    /* letter-spacing: 0.2em; */
+    font-weight: 200;
+    line-height: 1.5em;
+    letter-spacing: 0.2em;
+    max-height: 60vmin;
+    overflow: scroll;
+    padding-bottom: 40px;
+}
+
+.about_p_2 {
+    font-size: 13px;
+    color: white;
+    font-weight: 200;
+    line-height: 1.5em;
+    letter-spacing: 0.2em;
+    max-height: 40vmin;
+    overflow: scroll;
+    padding-bottom: 20px;
 }
 
 .content_qa_main {
@@ -362,8 +396,6 @@ h5 {
     width: 100%;
     padding: 2%;
 }
-
-.about {}
 
 
 /* 375 425 768 960 */
@@ -427,42 +459,50 @@ h5 {
         background-color: black;
         width: 90%;
         height: auto;
-        top: 5%;
+        top: 10%;
         left: -2%;
         z-index: -1;
         opacity: 1;
     }
     .content_about_2 {
         background-color: black;
-        width: 70%;
+        width: 80%;
         height: auto;
         top: 50%;
-        right: 0%;
+        right: -2%;
         z-index: -1;
         display: block;
         opacity: 1;
     }
-    .content_about_1_main {
+    /* .content_about_main {
         width: auto;
         height: auto;
         background-color: black;
-        margin: 15px;
-        padding: 30px 24px;
-    }
+        margin: 10px;
+        padding: 10px 10px;
+    } */
     h5 {
-        color: #fff;
         font-size: 17px;
-        /* line-height: 1.64em; */
-        letter-spacing: .2em;
-        text-align: center;
-        justify-content: center;
-        margin: 0 auto;
     }
-    .about_p {
-        /* font-size: 15px;
+    .about_p_1 {
+        font-size: 15px;
         color: white;
-        line-height: 1.64em;
-        letter-spacing: 0.1em; */
+        font-weight: 300;
+        line-height: 1.8em;
+        letter-spacing: 0.2em;
+        max-height: 60vmin;
+        overflow: scroll;
+        padding-bottom: 40px;
+    }
+    .about_p_2 {
+        font-size: 15px;
+        color: white;
+        font-weight: 300;
+        line-height: 1.8em;
+        letter-spacing: 0.2em;
+        max-height: 40vmin;
+        overflow: scroll;
+        padding-bottom: 10px;
     }
     .content_qa_main {
         padding: 4% 5%;
@@ -525,7 +565,7 @@ h5 {
 }
 
 @media(min-width:768px) {
-    .grid_introduce5 {
+    .grid_introduce {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
         background-color: rgb(53, 73, 250);
@@ -547,14 +587,14 @@ h5 {
         background-color: black;
         width: 90%;
         height: auto;
-        top: 2%;
+        top: 10%;
         left: -2%;
         z-index: -1;
         opacity: 1;
     }
     .content_about_2 {
         background-color: black;
-        width: 70%;
+        width: 85%;
         height: auto;
         top: 50%;
         right: 0%;
@@ -562,26 +602,36 @@ h5 {
         display: block;
         opacity: 1;
     }
-    .content_about_1_main {
+    .content_about_main {
         width: auto;
         height: auto;
         background-color: black;
-        margin: 15px;
-        padding: 30px 24px;
+        margin: 10px;
+        padding: 10px 20px;
     }
     h5 {
-        color: #fff;
         font-size: 19px;
-        letter-spacing: .2em;
-        text-align: center;
-        justify-content: center;
-        margin: 0 auto;
+        letter-spacing: .3em;
     }
-    .about_p {
-        /* font-size: 16px;
+    .about_p_1 {
+        font-size: 17px;
         color: white;
-        line-height: 1.64em;
-        letter-spacing: 0.1em; */
+        font-weight: 300;
+        line-height: 1.8em;
+        letter-spacing: 0.2em;
+        max-height: 40vmin;
+        overflow: scroll;
+        padding-bottom: 40px;
+    }
+    .about_p_2 {
+        font-size: 17px;
+        color: white;
+        font-weight: 300;
+        line-height: 1.8em;
+        letter-spacing: 0.2em;
+        max-height: 30vmin;
+        overflow: scroll;
+        padding-bottom: 10px;
     }
     .qa_p {
         font-size: 16px;
@@ -675,7 +725,7 @@ h5 {
         border-radius: 20px;
     }
     .content_carousel {
-        display: flexbox;
+        /* display: flexbox; */
         flex-direction: column;
         background-color: black;
         width: 100%;
@@ -705,7 +755,7 @@ h5 {
         background-color: rgb(53, 73, 250);
         margin: auto 0px;
     }
-    .grid_introduce5 {
+    .grid_introduce {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
         background-color: rgb(53, 73, 250);
@@ -737,9 +787,7 @@ h5 {
         /* border: 2px solid rgb(53, 73, 250); */
     }
     .about_img {
-        width: 100%;
-        /* border: 2px solid rgb(53, 73, 250); */
-        background-image: url("https://a5052106a.github.io/Snooper/image/about/about3.jpg");
+        scale: 2;
     }
     .introduce-item {
         border: 2px solid rgb(53, 73, 250);
@@ -837,44 +885,39 @@ h5 {
     .content_about_1 {
         display: block;
         background-color: black;
-        width: 55%;
-        height: auto;
-        top: 10%;
+        width: 80%;
+        top: 7%;
         left: -8%;
         z-index: -1;
         opacity: 1;
     }
     .content_about_2 {
         background-color: black;
-        width: 65%;
+        width: 90%;
         height: auto;
-        top: 35%;
+        top: 50%;
         right: -10%;
         z-index: -1;
         display: block;
         opacity: 1;
     }
-    .content_about_1_main {
-        width: auto;
-        height: auto;
-        background-color: black;
-        margin: 20px;
-        padding: 40px 24px;
+    .content_about_main {
+        padding: 20px 40px;
     }
     h5 {
-        color: #fff;
         font-size: 21px;
-        /* line-height: 1.64em; */
-        letter-spacing: .2em;
-        text-align: center;
-        justify-content: center;
-        margin: 0 auto;
     }
-    .about_p {
-        /* font-size: 16px; */
-        /* color: white; */
-        /* line-height: 1.64em; */
-        /* letter-spacing: 0.1em; */
+    .about_p_1 {
+        font-size: 19px;
+        letter-spacing: 0.3em;
+        max-height: 40vmin;
+        padding-bottom: 40px;
+    }
+    .about_p_2 {
+        font-size: 19px;
+        letter-spacing: 0.3em;
+        max-height: 30vmin;
+        padding-bottom: 10px;
     }
     .qa_p {
         font-size: 16px;
@@ -974,13 +1017,13 @@ h5 {
         background-color: black;
         width: 100%;
         height: auto;
-        top: 10%;
+        top: 5%;
         left: 0;
         z-index: 1;
         opacity: 0;
     }
     .content_carousel_main {
-        width: 80vmin;
+        width: 90%;
         background-color: black;
         margin: 10px auto;
         padding: 10px 24px;
