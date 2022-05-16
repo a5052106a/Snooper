@@ -60,17 +60,20 @@ img {
 
 .logo_img {
     /* min-width: 150px; */
-    scale: 2 !important;
+    scale: 2;
+    overflow: hidden;
 }
 
 .about_img {
     /* min-width: 150px; */
     scale: 2;
+    overflow: hidden;
 }
 
 .video_img {
     /* min-width: 150px; */
     scale: 2;
+    overflow: hidden;
 }
 
 .top_marquee {
