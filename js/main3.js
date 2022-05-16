@@ -217,7 +217,7 @@ function change() {
                             } else if (angle == '檔案遺失') {
                                 angle = angle
                             } else if (angle == 'x') {
-                                angle = anggle
+                                angle = angle
                             } else {
                                 angle = angle + "公斤"
                             }
