@@ -196,24 +196,28 @@ function change() {
                             user_photo4.src = imgurl4[userNum]
 
                             var name = qa_array[userNum].name
-                            if (name == 'x') {
+                            if (name == '-') {
                                 name = '拒絕回答！'
                             }
                             var phone_number = qa_array[userNum].phone_number
-                            if (phone_number == 'x') {
+                            if (phone_number == '-') {
                                 phone_number = '拒絕回答！'
                             }
                             var address = qa_array[userNum].address
-                            if (address == 'x') {
+                            if (address == '-') {
                                 address = '拒絕回答！'
                             }
                             var hobby = qa_array[userNum].hobby
-                            if (hobby == 'x') {
+                            if (hobby == '-') {
                                 hobby = '拒絕回答！'
                             }
                             var angle = qa_array[userNum].angle
-                            if (angle == 'x') {
+                            if (angle == '-') {
                                 angle = '拒絕回答！'
+                            } else if (angle == '檔案遺失') {
+                                angle = angle
+                            } else if (angle == 'x') {
+                                angle = anggle
                             } else {
                                 angle = angle + "公斤"
                             }
