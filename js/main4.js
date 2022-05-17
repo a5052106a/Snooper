@@ -424,7 +424,7 @@ document.getElementsByClassName('introduce-item')[1]
         var bg_about = document.getElementsByClassName('testclass_img');
         // console.log("b")
         for (i in bg_about) {
-            bg_about[i].src = "/image/about/about.jpg"
+            bg_about[i].src = "image/about/about.jpg"
         }
 
 
@@ -441,7 +441,7 @@ document.getElementsByClassName('introduce-item')[2]
         var bg_about = document.getElementsByClassName('testclass_img');
         document.getElementsByClassName("video")[0].play();
         for (i in bg_about) {
-            bg_about[i].src = "/image/video/video3.jpg"
+            bg_about[i].src = "image/video/video3.jpg"
         }
 
     })
