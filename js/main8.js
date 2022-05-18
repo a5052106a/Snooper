@@ -123,7 +123,8 @@ function change() {
                 }
             }
             if (temp[i] == undefined) {
-                imgurl[i] = "./image/blank/lost.jpg"
+                imgurl[i].src = "./image/blank/lost.jpg"
+                console.log(imgurl[i].src)
                     // console.log(imgurl[i])
             }
         }
