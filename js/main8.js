@@ -78,7 +78,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             }
             console.log(imgarray)
             ttt = imgarray.length
-            console.log(ttt)
+            console.log("asasasa"+ttt)
             //console.log(dataarray)
             //console.log(imgarray)
             //console.log(imgarray)
