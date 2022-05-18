@@ -141,7 +141,7 @@ function change() {
 
         for (var i = 0; i < catching; i++) {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
-                //console.log(undechesrc)
+                console.log(undechesrc)
             if (undechesrc == "https://a5052106a.github.io/Snooper/image/blank/lost.jpg") {
                 // console.log("abcdefg")
             } else {
