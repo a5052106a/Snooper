@@ -121,7 +121,7 @@ function change() {
                 }
             }
             if (temp[i] == undefined) {
-                imgurl[i] = "/image/blank/blank00.jpg"
+                imgurl[i] = "/image/blank/lost.jpg"
                     // console.log(imgurl[i])
             }
         }
