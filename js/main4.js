@@ -136,7 +136,7 @@ function change() {
         for (var i = 0; i < catching; i++) {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
                 //console.log(undechesrc)
-            if (undechesrc == "https://a5052106a.github.io/Snooper/image/blank/blank00.jpg") {
+            if (undechesrc == "https://a5052106a.github.io/Snooper/image/blank/lost.jpg") {
                 // console.log("abcdefg")
             } else {
                 // console.log(ttt)
@@ -144,7 +144,7 @@ function change() {
                 //測試所有class進行動作
                 var test1 = document.getElementsByClassName('grid-item')
                 for (var k = 0; k < ttt; k++) {
-                    if (test1[k].getElementsByTagName("img")[0].src != "https://a5052106a.github.io/Snooper/image/blank/blank00.jpg") {
+                    if (test1[k].getElementsByTagName("img")[0].src != "https://a5052106a.github.io/Snooper/image/blank/lost.jpg") {
                         test1[k].addEventListener('click', function(event) {
                             document.getElementsByClassName('window_header_close')[0].style.zIndex = "1";
                             document.getElementById("page2").style.zIndex = "5";
