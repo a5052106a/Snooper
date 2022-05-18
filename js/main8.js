@@ -70,11 +70,13 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             //console.log(dataarray);
             //console.log("data:"+dataarray.length)//總共Firebase裡面資料數量
             ttt = imgarray.length
+            console.log(dataarray)
                 //console.log(dataarray.length-1)
                 //console.log(dataarray.length-10)
             for (var i = dataarray.length - 1; i >= dataarray.length - catching; i--) {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
+            console.log(imgarray)
             //console.log(dataarray)
             //console.log(imgarray)
             //console.log(imgarray)
