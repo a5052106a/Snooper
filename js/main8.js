@@ -132,7 +132,7 @@ function change() {
                         imgurl[j] = temp[i]
                     }
                 }else{
-                    imgurl[i] = "/image/blank/blank00.jpg"
+                    imgurl[i] = "./image/blank/blank00.jpg"
             }
             
         }   
