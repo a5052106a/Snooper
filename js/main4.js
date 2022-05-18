@@ -295,7 +295,7 @@ get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
             for (var i = dataarray3.length - 1; i >= dataarray3.length - catching3; i--) {
                 imgarray3[dataarray3.length - i - 1] = dataarray3[i]
             }
-            for (var i = 0; i < dataarray3.length; i++) {
+            for (var i = 0; i < imgarray3.length; i++) {
                 getDownloadURL(ref(storage, '/WebCam02/' + imgarray3[i])).then((url) => {
                     temp3.push(url)
                     imgcount3++
