@@ -105,6 +105,7 @@ var timetest = setInterval(change, 1000);
 
 function change() {
     if (imgcount != catching) {
+        console.log(imgcount)
         if (imgcount >= ttt) {
             imgcount = catching
         }
