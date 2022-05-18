@@ -5,6 +5,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstati
 import { getDatabase, set, get, child, ref as ref1 } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js'
 
 const firebaseConfig = {
+    // firebase1
     apiKey: "AIzaSyD_JVzl9eFNOLoa9lWtyrQGqHKnGXb9HBg",
     authDomain: "snooper-81985.firebaseapp.com",
     databaseURL: "https://snooper-81985-default-rtdb.firebaseio.com",
@@ -12,6 +13,14 @@ const firebaseConfig = {
     storageBucket: "snooper-81985.appspot.com",
     messagingSenderId: "780843848511",
     appId: "1:780843848511:web:71932eb7d074d829adf98a"
+
+    // firebase2.0
+    // apiKey: "AIzaSyDx8SLb7Tc3iavuZeqj7IQACLi6DPXDe0I",
+    // authDomain: "snooper2.firebaseapp.com",
+    // projectId: "snooper2",
+    // storageBucket: "snooper2.appspot.com",
+    // messagingSenderId: "687689048517",
+    // appId: "1:687689048517:web:fc6058fb88f8d22dec6bac"
 };
 
 const app = initializeApp(firebaseConfig);
