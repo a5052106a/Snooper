@@ -70,7 +70,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             //console.log(dataarray);
             //console.log("data:"+dataarray.length)//總共Firebase裡面資料數量
             
-            console.log(dataarray)
+            //console.log(dataarray)
                 //console.log(dataarray.length-1)
                 //console.log(dataarray.length-10)
             for (var i = dataarray.length - 1; i >= dataarray.length - catching; i--) {
@@ -81,7 +81,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             }else{
                 ttt = dataarray.length
             }
-            console.log(ttt)
+            console.log("ttt:"+ttt)
             //console.log(dataarray)
             //console.log(imgarray)
             //console.log(imgarray)
@@ -94,6 +94,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
                     imgcount++
                 }).catch((error) => {
                     //console.log("error:" + error)
+                    temp.push(undefined)
                     imgcount++
                 })
             }
@@ -116,26 +117,19 @@ function change() {
         }
     } else {
         //console.log(temp)
+        
         for (var i = 0; i < catching; i++) {
             //URL temp 進行10次
-            for (var j = 0; j < catching; j++) {
-                // url 對imgarray進行全體掃秒
-                var te = temp[i] //url : https://asdasdasdasd%20Webcam
-                    //var tw = imgarray[j].replace(/ /g, "%20")
-                try { var tw = imgarray[j].replace(/ /g, "%20") } catch { console.log("change 出現無法接收的東西") }
-                if (temp[i] != undefined) {
-                    if (te.includes(tw)) {
-                        imgurl[j] = temp[i]
-                    }
-                }
+            if(temp[i]!=undefined){
+                imgurl[i]=temp[i]
             }
             if (temp[i] == undefined) {
                 imgurl[i] = "./image/blank/lost.jpg"
-                console.log(imgurl[i])
+                //console.log(imgurl[i])
                     // console.log(imgurl[i])
             }
         }
-        console.log(imgurl)
+        //console.log(imgurl)
         for (var i = 0; i < catching; i++) {
             //console.log(imgurl[i])
             var test_img = document.getElementsByClassName("grid-item")[i].getElementsByTagName("img")[0];
@@ -147,11 +141,11 @@ function change() {
 
         for (var i = 0; i < catching; i++) {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
-                console.log(undechesrc)
+                //console.log(undechesrc)
             if (undechesrc == "https://a5052106a.github.io/Snooper/image/blank/lost.jpg") {
-                 console.log("abcdefg")
+                console.log("此照片已遺失")
             } else {
-                console.log(ttt)
+                //console.log(ttt)
                 // page1 : on click go to page2
                 //測試所有class進行動作
                 var test1 = document.getElementsByClassName('grid-item')
@@ -231,7 +225,7 @@ function change() {
                                 classarray[k].src = classbackimg
                                     // console.log(classbackimg)
                             }
-                            console.log(k)
+                           
                         });
                     }
                 }
@@ -255,20 +249,25 @@ get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
             }else{
                 ttt2 = dataarray2.length
             }
+            console.log("ttt2:"+ttt2)
+            console.log(dataarray2)
             console.log(ttt2)
+            console.log(imgarray2.length)
             for (var i = 0; i < ttt2; i++) {
                 // console.log(imgarray2[i])
                 getDownloadURL(ref(storage, '/WebCam03/' + imgarray2[i])).then((url) => {
                     temp2.push(url)
                     imgcount2++
                 }).catch((error) => {
+                    temp2.push(undefined)
+                    console.log("爆炸")
                     imgcount2++
                 })
             }
         }
     } else {}
 }).catch((error) => {
-    //console.log("EEEERRRROOORRRR")
+    
 });
 var timetest2 = setInterval(change2, 1000);
 
@@ -283,22 +282,25 @@ function change2() {
             for (var j = 0; j < catching2; j++) {
                 // url 對imgarray進行全體掃秒
                 var te2 = temp2[i] //url : https://asdasdasdasd%20Webcam
-                try { var tw2 = imgarray2[j].replace(/ /g, "%20") } catch { console.log("change2 出現無法接收的東西") }
+                //console.log(te2)
+                //try { var tw2 = imgarray2[j].replace(/ /g, "%20") } catch { console.log("change2 出現無法接收的東西") }
+                var tw2 = imgarray2[j]
+                //console.log(tw2)
                 if (temp2[i] != undefined) {
+                    //console.log(te2.includes(tw2))
                     if (te2.includes(tw2)) {
                         imgurl2[j] = temp2[i]
                     }
-                }
+                }else{
+                    imgurl2[i] = "/image/blank/blank00.jpg"
             }
-            if (temp2[i] == undefined) {
-                imgurl2[i] = "./image/blank/lost.jpg"
-            }
+            
         }
         clearInterval(timetest2)
     }
 
 }
-
+}
 
 // ------ 輪播圖3 ---------
 
@@ -315,12 +317,14 @@ get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
             }else{
                 ttt3=dataarray3.length
             }
-            console.log(ttt3)
+            console.log("ttt3:"+ttt3)
+            console.log(dataarray3)
             for (var i = 0; i < ttt3; i++) {
                 getDownloadURL(ref(storage, '/WebCam02/' + imgarray3[i])).then((url) => {
                     temp3.push(url)
                     imgcount3++
                 }).catch((error) => {
+                    temp3.push(undefined)
                     imgcount3++
                 })
             }
@@ -336,21 +340,27 @@ function change3() {
         }
     } else {
         for (i = 0; i < catching3; i++) {
+            //URL temp 進行10次
             for (var j = 0; j < catching3; j++) {
-                var te3 = temp3[i]
-                try { var tw3 = imgarray3[j].replace(/ /g, "%20") } catch { console.log("change3 出現無法接收的東西") }
+                // url 對imgarray進行全體掃秒
+                var te3 = temp3[i] //url : https://asdasdasdasd%20Webcam
+                //console.log(te2)
+                //try { var tw2 = imgarray2[j].replace(/ /g, "%20") } catch { console.log("change2 出現無法接收的東西") }
+                var tw3 = imgarray3[j]
+                //console.log(tw2)
                 if (temp3[i] != undefined) {
+                    //console.log(te2.includes(tw2))
                     if (te3.includes(tw3)) {
                         imgurl3[j] = temp3[i]
                     }
-                }
-                if (temp3[i] == undefined) {
-                    imgurl3[i] = "./image/blank/lost.jpg"
-                }
+                }else{
+                    imgurl3[i] = "/image/blank/blank00.jpg"
             }
+            
         }
         clearInterval(timetest3)
     }
+}
 }
 // ------ 輪播圖4 ---------
 
@@ -368,12 +378,14 @@ get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
             }else{
                 ttt4 = dataarray4.length
             }
-            console.log(ttt4)
+            console.log("ttt4:"+ttt4)
+            console.log(dataarray4)
             for (var i = 0; i < ttt4; i++) {
                 getDownloadURL(ref(storage, '/WebCam01/' + imgarray4[i])).then((url) => {
                     temp4.push(url)
                     imgcount4++
                 }).catch((error) => {
+                    temp4.push(undefined)
                     imgcount4++
                 })
             }
@@ -392,22 +404,25 @@ function change4() {
             //URL temp 進行10次
             for (var j = 0; j < catching4; j++) {
                 // url 對imgarray進行全體掃秒
-                var te4 = temp4[i]
-                try { var tw4 = imgarray4[j].replace(/ /g, "%20") } catch { console.log("change4 出現無法接收的東西") }
+                var te4 = temp4[i] //url : https://asdasdasdasd%20Webcam
+                //console.log(te2)
+                //try { var tw2 = imgarray2[j].replace(/ /g, "%20") } catch { console.log("change2 出現無法接收的東西") }
+                var tw4 = imgarray4[j]
+                //console.log(tw2)
                 if (temp4[i] != undefined) {
+                    //console.log(te2.includes(tw2))
                     if (te4.includes(tw4)) {
                         imgurl4[j] = temp4[i]
                     }
-                }
-                if (temp4[i] == undefined) {
-                    imgurl4[i] = "./image/blank/lost.jpg"
-                }
+                }else{
+                    imgurl4[i] = "/image/blank/blank00.jpg"
             }
+            
         }
         clearInterval(timetest4)
     }
 }
-
+}
 // -----------------------    QA DATA Catching    ----------------------------
 const data_qa = "target";
 var qa_array = new Array()
