@@ -69,7 +69,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             var dataarray = snapshot.val();
             //console.log(dataarray);
             //console.log("data:"+dataarray.length)//總共Firebase裡面資料數量
-            ttt = imgarray.length
+            
             console.log(dataarray)
                 //console.log(dataarray.length-1)
                 //console.log(dataarray.length-10)
@@ -77,6 +77,8 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
             console.log(imgarray)
+            ttt = imgarray.length
+            console.log(ttt)
             //console.log(dataarray)
             //console.log(imgarray)
             //console.log(imgarray)
@@ -88,7 +90,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
                         // console.log(temp)
                     imgcount++
                 }).catch((error) => {
-                    console.log("error:" + error)
+                    //console.log("error:" + error)
                     imgcount++
                 })
             }
@@ -130,11 +132,12 @@ function change() {
                     // console.log(imgurl[i])
             }
         }
-        // console.log(imgurl)
+        console.log(imgurl)
         for (var i = 0; i < catching; i++) {
             //console.log(imgurl[i])
             var test_img = document.getElementsByClassName("grid-item")[i].getElementsByTagName("img")[0];
             test_img.src = imgurl[i]
+            
             clearInterval(timetest)
         }
         var undecheckarray = document.getElementsByClassName("grid-item");
@@ -143,9 +146,9 @@ function change() {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
                 console.log(undechesrc)
             if (undechesrc == "https://a5052106a.github.io/Snooper/image/blank/lost.jpg") {
-                // console.log("abcdefg")
+                 console.log("abcdefg")
             } else {
-                // console.log(ttt)
+                console.log(ttt)
                 // page1 : on click go to page2
                 //測試所有class進行動作
                 var test1 = document.getElementsByClassName('grid-item')
@@ -241,13 +244,14 @@ get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
     if (snapshot.exists()) {
         if (snapshot.val() != null) {
             var dataarray2 = snapshot.val();
-            ttt2 = dataarray2.length
-
             for (var i = dataarray2.length - 1; i >= dataarray2.length - catching2; i--) {
                 imgarray2[dataarray2.length - i - 1] = dataarray2[i]
             }
-            console.log(dataarray2.length)
-            console.log(imgarray2.length)
+            if(dataarray2.length>60){
+                ttt2 = imgarray2.length
+            }else{
+                ttt2 = dataarray2.length
+            }
             for (var i = 0; i < imgarray2.length; i++) {
                 // console.log(imgarray2[i])
                 getDownloadURL(ref(storage, '/WebCam03/' + imgarray2[i])).then((url) => {
@@ -260,7 +264,7 @@ get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
         }
     } else {}
 }).catch((error) => {
-    console.log("EEEERRRROOORRRR")
+    //console.log("EEEERRRROOORRRR")
 });
 var timetest2 = setInterval(change2, 1000);
 
