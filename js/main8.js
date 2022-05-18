@@ -76,13 +76,16 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
             for (var i = dataarray.length - 1; i >= dataarray.length - catching; i--) {
                 imgarray[dataarray.length - i - 1] = dataarray[i]
             }
-            console.log(imgarray)
-            ttt = imgarray.length
-            console.log("asasasa"+ttt)
+            if(dataarray.length>60){
+                ttt = imgarray.length
+            }else{
+                ttt = dataarray.length
+            }
+            console.log(ttt)
             //console.log(dataarray)
             //console.log(imgarray)
             //console.log(imgarray)
-            for (var i = 0; i < imgarray.length; i++) {
+            for (var i = 0; i < ttt; i++) {
                 // console.log(imgarray[i])
                 getDownloadURL(ref(storage, '/WebCam04/' + imgarray[i])).then((url) => {
                     // console.log(url)
@@ -252,7 +255,8 @@ get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
             }else{
                 ttt2 = dataarray2.length
             }
-            for (var i = 0; i < imgarray2.length; i++) {
+            console.log(ttt2)
+            for (var i = 0; i < ttt2; i++) {
                 // console.log(imgarray2[i])
                 getDownloadURL(ref(storage, '/WebCam03/' + imgarray2[i])).then((url) => {
                     temp2.push(url)
@@ -302,11 +306,17 @@ get(child(dbRef, `WebCam02/${target3}`)).then((snapshot) => {
     if (snapshot.exists()) {
         if (snapshot.val() != null) {
             var dataarray3 = snapshot.val();
-            ttt3 = dataarray3.length
+            //ttt3 = dataarray3.length
             for (var i = dataarray3.length - 1; i >= dataarray3.length - catching3; i--) {
                 imgarray3[dataarray3.length - i - 1] = dataarray3[i]
             }
-            for (var i = 0; i < imgarray3.length; i++) {
+            if(dataarray3.length>60){
+                ttt3=imgarray3.length
+            }else{
+                ttt3=dataarray3.length
+            }
+            console.log(ttt3)
+            for (var i = 0; i < ttt3; i++) {
                 getDownloadURL(ref(storage, '/WebCam02/' + imgarray3[i])).then((url) => {
                     temp3.push(url)
                     imgcount3++
@@ -349,11 +359,17 @@ get(child(dbRef, `WebCam01/${target4}`)).then((snapshot) => {
         // console.log(snapshot.val())
         if (snapshot.val() != null) {
             var dataarray4 = snapshot.val();
-            ttt4 = dataarray4.length
+            //ttt4 = dataarray4.length
             for (var i = dataarray4.length - 1; i >= dataarray4.length - catching4; i--) {
                 imgarray4[dataarray4.length - i - 1] = dataarray4[i]
             }
-            for (var i = 0; i < imgarray4.length; i++) {
+            if(dataarray4.length>60){
+                ttt4 = imgarray4.length
+            }else{
+                ttt4 = dataarray4.length
+            }
+            console.log(ttt4)
+            for (var i = 0; i < ttt4; i++) {
                 getDownloadURL(ref(storage, '/WebCam01/' + imgarray4[i])).then((url) => {
                     temp4.push(url)
                     imgcount4++
