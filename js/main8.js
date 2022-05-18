@@ -109,6 +109,7 @@ function change() {
             imgcount = catching
         }
     } else {
+        console.log(temp)
         for (var i = 0; i < catching; i++) {
             //URL temp 進行10次
             for (var j = 0; j < catching; j++) {
@@ -136,6 +137,7 @@ function change() {
             clearInterval(timetest)
         }
         var undecheckarray = document.getElementsByClassName("grid-item");
+
         for (var i = 0; i < catching; i++) {
             var undechesrc = undecheckarray[i].getElementsByTagName("img")[0].src
                 //console.log(undechesrc)
