@@ -456,14 +456,15 @@ get(child(dbRef, `QA/${data_qa}`)).then((snapshot) => {
 
 
 //-----------loading
+var randa = Math.random() * 1000;
+document.getElementsByClassName("loading-gif")[0].src = "image/loading6.gif?" + randa
 setTimeout(timer1, 8000);
 
 function timer1() {
     document.getElementById("loading-bg").style.opacity = "0";
     document.getElementById("loading-bg").style.zIndex = "-10";
 }
-var randa = Math.random() * 1000;
-document.getElementsByClassName("loading-gif")[0].src = "image/loading6.gif?" + randa
+
 
 
 
