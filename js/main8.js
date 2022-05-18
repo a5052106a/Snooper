@@ -105,12 +105,12 @@ var timetest = setInterval(change, 1000);
 
 function change() {
     if (imgcount != catching) {
-        console.log(imgcount)
+        //console.log(imgcount)
         if (imgcount >= ttt) {
             imgcount = catching
         }
     } else {
-        console.log(temp)
+        //console.log(temp)
         for (var i = 0; i < catching; i++) {
             //URL temp 進行10次
             for (var j = 0; j < catching; j++) {
@@ -259,7 +259,9 @@ get(child(dbRef, `WebCam03/${target2}`)).then((snapshot) => {
             }
         }
     } else {}
-}).catch((error) => {});
+}).catch((error) => {
+    console.log("EEEERRRROOORRRR")
+});
 var timetest2 = setInterval(change2, 1000);
 
 function change2() {
@@ -281,7 +283,7 @@ function change2() {
                 }
             }
             if (temp2[i] == undefined) {
-                imgurl2[i] = "/image/blank/blank00.jpg"
+                imgurl2[i] = "./image/blank/lost.jpg"
             }
         }
         clearInterval(timetest2)
@@ -329,7 +331,7 @@ function change3() {
                     }
                 }
                 if (temp3[i] == undefined) {
-                    imgurl3[i] = "/image/blank/blank00.jpg"
+                    imgurl3[i] = "./image/blank/lost.jpg"
                 }
             }
         }
@@ -378,7 +380,7 @@ function change4() {
                     }
                 }
                 if (temp4[i] == undefined) {
-                    imgurl4[i] = "/image/blank/blank00.jpg"
+                    imgurl4[i] = "./image/blank/lost.jpg"
                 }
             }
         }
