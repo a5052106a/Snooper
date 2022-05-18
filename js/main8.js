@@ -88,7 +88,7 @@ get(child(dbRef, `WebCam04/${target}`)).then((snapshot) => {
                         // console.log(temp)
                     imgcount++
                 }).catch((error) => {
-                    // console.log("error:" + error)
+                    console.log("error:" + error)
                     imgcount++
                 })
             }
