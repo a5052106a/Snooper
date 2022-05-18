@@ -167,18 +167,18 @@ function change() {
                                 // console.log(imgurl2[userNum])
                             var user_photo2 = document.getElementsByClassName("user_photo2")[0].getElementsByTagName("img")[0]
                             if (imgurl2[userNum] == undefined) {
-                                imgurl2[userNum] = "/image/blank/lost.jpg"
+                                imgurl2[userNum] = "./image/blank/lost.jpg"
                             }
                             user_photo2.src = imgurl2[userNum]
                             var user_photo3 = document.getElementsByClassName("user_photo3")[0].getElementsByTagName("img")[0]
                             if (imgurl3[userNum] == undefined) {
-                                imgurl3[userNum] = "/image/blank/lost.jpg"
+                                imgurl3[userNum] = "./image/blank/lost.jpg"
                             }
                             user_photo3.src = imgurl3[userNum]
 
                             var user_photo4 = document.getElementsByClassName("user_photo4")[0].getElementsByTagName("img")[0]
                             if (imgurl4[userNum] == undefined) {
-                                imgurl4[userNum] = "/image/blank/lost.jpg"
+                                imgurl4[userNum] = "./image/blank/lost.jpg"
                             }
                             user_photo4.src = imgurl4[userNum]
 
