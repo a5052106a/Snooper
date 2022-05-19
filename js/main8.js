@@ -7,7 +7,7 @@ import { getDatabase, set, get, child, ref as ref1 } from 'https://www.gstatic.c
 const firebaseConfig = {
     apiKey: "AIzaSyD_JVzl9eFNOLoa9lWtyrQGqHKnGXb9HBg",
     authDomain: "snooper-81985.firebaseapp.com",
-    databaseURL: "https://snooper-81985-default-rtdb.firebaseio.com",
+    databaseURL: "https://snooper-81985-default-rtdb.firebaseio.com/",
     projectId: "snooper-81985",
     storageBucket: "snooper-81985.appspot.com",
     messagingSenderId: "780843848511",
